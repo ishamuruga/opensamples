@@ -1,0 +1,23 @@
+<h1>Welcome to Angular</h1>
+<hr/>
+
+<hr/>
+<button (click)="doSendData()">Send Data</button>
+<button (click)="doClearData()">Clear Data</button>
+<h2>{{9|math_exp:7}}</h2>
+<h3>{{dob|date|uppercase }}</h3>
+<div>
+  <app-grid [students]="studs" (addNewStudentEmitter)="handleAddNewStudent($event)"></app-grid>
+</div>
+
+
+<hr/>
+<input type="text" [(ngModel)]="texts"/>
+<h2>2 Way Data Binding or Intrapolation</h2>
+<h3>2 W Model data - {{texts}} </h3>
+<label>Students</label>
+<div>
+  <select>
+    <option *ngFor="let stu of studs" [value]="stu.id">{{stu.name}}</option>
+  </select>
+</div>

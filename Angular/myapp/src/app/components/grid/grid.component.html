@@ -1,0 +1,31 @@
+<h4>My Common Grid</h4>
+<table border="1">
+    <tr>
+        <td>Stu id</td>
+        <td>Stu Name</td>
+        <td>Stu Age</td>
+        <td>Action</td>
+    </tr>
+    <tr *ngFor="let student of students">
+        <td>{{student.id}}</td>
+        <td>{{student.name | uppercase}}</td>
+        <td>{{this.cService.add(student.age,1000)}}</td>
+        <td><button>Delete</button></td>
+    </tr>
+</table>
+<div>
+    <label>ID</label>
+    <div>
+        <input type="text" [(ngModel)]="id" />
+    </div>
+    <label>Name</label>
+    <div>
+        <input type="text" [(ngModel)]="stu_name" />
+    </div>
+    <label>Age</label>
+    <div>
+        <input type="text" [(ngModel)]="age" />
+    </div>
+
+    <button (click)="handleAddStudent()">Add Student</button>
+</div>
