@@ -12,11 +12,11 @@ public abstract class BaseController {
     
     public List<Customer> getDummyCustomers() {
     
-        customers.add(new Customer(1,"virtusa1","virt1@gmail.com"));
-        customers.add(new Customer(2,"virtusa2","virt2@gmail.com"));
-        customers.add(new Customer(3,"virtusa3","virt3@gmail.com"));
-        customers.add(new Customer(4,"virtusa4","virt4@gmail.com"));
-        customers.add(new Customer(5,"virtusa5","virt5@gmail.com"));
+        customers.add(new Customer(1,"mycom1","t1@gmail.com"));
+        customers.add(new Customer(2,"mycom2","rt2@gmail.com"));
+        customers.add(new Customer(3,"mycom3","rt40@gmail.com"));
+        customers.add(new Customer(4,"mycom4","rt4@gmail.com"));
+        customers.add(new Customer(5,"mycom5","rt5@gmail.com"));
         
         return customers;
     }
