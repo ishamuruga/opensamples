@@ -1,0 +1,38 @@
+<p>dashboard works!</p>
+<button (click)="fetchProdData()">Fetch via Promise</button>
+<button (click)="addProdData()">Add Prod via Promise</button>
+<button (click)="fetchProdDataviaObs()">Fetch via Observable</button>
+
+
+<div>
+    <table border="1">
+        <tr>
+            <td>
+                id
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                Cost
+            </td>
+            <td>
+                Quantity
+            </td>
+        </tr>
+        <tr *ngFor="let prod of prods">
+            <td>
+                {{prod.id}}
+            </td>
+            <td>
+                {{prod.name}}
+            </td>
+            <td>
+                {{prod.cost}}
+            </td>
+            <td>
+                {{prod.quantity}}
+            </td>
+        </tr>
+    </table>
+</div>
