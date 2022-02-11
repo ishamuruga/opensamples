@@ -1,5 +1,7 @@
 package com.mycompany.mybankapi.service;
 
+import java.util.Optional;
+
 import com.mycompany.mybankapi.config.MyAConfig;
 import com.mycompany.mybankapi.config.MyAppConfig;
 import com.mycompany.mybankapi.exceptions.UnderAgeStudentException;
@@ -42,6 +44,10 @@ public class StudentsManagerImpl implements StudentsManager {
         
         sRepo.save(stu);
         return stu;
+    }
+
+    public Optional<Student> findbyId(Long id) {
+        return sRepo.findById(id);
     }
     
 }

@@ -9,3 +9,9 @@ import org.springframework.stereotype.Repository;
 public interface StudentsRepository extends JpaRepository<Student,Long> {
     
 }
+
+
+// JPA
+// Hibernate
+// SQL
+// Database

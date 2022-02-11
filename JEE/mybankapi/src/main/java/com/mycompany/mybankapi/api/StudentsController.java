@@ -41,7 +41,7 @@ public class StudentsController extends BaseController{
         if (stu.get() != null){
             return new ResponseEntity<Student>(stu.get(),HttpStatus.OK);
         } else {
-            return new ResponseEntity<Student>(new Student(0,"",""),HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<Student>(new Student("",""),HttpStatus.BAD_REQUEST);
         }
     }
 
