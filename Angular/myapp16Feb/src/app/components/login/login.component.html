@@ -1,0 +1,37 @@
+<p>login works!</p>
+<button (click)="doLogin()">Login</button>
+<button (click)="doLoggout()">Loggout</button>
+
+<form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
+
+    <div>
+        <label>Email</label>
+        <input type="text" name="email" formControlName="email" />
+        <div class="alert alert-danger" *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched">
+            Enter Valid Email
+        </div>
+        <div class="alert alert-danger" *ngIf="loginForm.controls['email'].hasError('email') && loginForm.controls['email'].touched">
+            Enter Valid Email format
+        </div>
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input type="text" name="password" formControlName="password"/>
+        <div class="alert alert-danger" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">
+            Enter Valid Password
+        </div>
+        <div class="alert alert-danger" *ngIf="loginForm.controls['password'].hasError('minlength') && loginForm.controls['password'].touched">
+            Mininum 3 is required
+        </div>
+        <div class="alert alert-danger" *ngIf="loginForm.controls['password'].hasError('maxlength') && loginForm.controls['password'].touched">
+            Maximum 8 is required
+        </div>
+    </div>
+
+    <div>
+        <button class="btn btn-primary btn-lg btn-block" [disabled]="!loginForm.valid">Submit</button>
+    </div>
+
+    {{loginForm.valid}}
+</form>

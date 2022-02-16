@@ -1,0 +1,12 @@
+<p>dashboard works!</p>
+<button (click)="doPromiseCall()">ViaPromise</button>
+<button (click)="doObservableCall()">ViaObservable</button>
+<h3>{{todate}}</h3>
+<h3>{{todate | date | lowercase}}</h3>
+<h3>{{todate | date:'yyyy-MM-dd'}}</h3>
+<h2>{{age | virexp:5}}</h2>
+
+<div *ngFor="let p of prods">
+    {{p.id}}-{{p.name | uppercase}}-{{p.cost}}-{{p.quantity}}
+</div>
+
