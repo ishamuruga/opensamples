@@ -42,7 +42,7 @@
       },
       {
         "id": 5874,
-        "name": "Virtusa007",
+        "name": "company007",
         "cost": 100,
         "quantity": 125,
         "locationId": 3,
@@ -50,7 +50,7 @@
       },
       {
         "id": 0.028434113596290223,
-        "name": "Virtusa 008",
+        "name": "company 008",
         "cost": 100,
         "quantity": 0,
         "locationId": 6,
@@ -58,7 +58,7 @@
       },
       {
         "id": 0.5717835382632042,
-        "name": "Virtusa 008",
+        "name": "company 008",
         "cost": 100,
         "quantity": 0,
         "locationId": 6,
@@ -66,7 +66,7 @@
       },
       {
         "id": 0.7258098230991068,
-        "name": "Virtusa 008",
+        "name": "company 008",
         "cost": 100,
         "quantity": 0,
         "locationId": 6,
@@ -74,7 +74,7 @@
       },
       {
         "id": 0.12994119042628327,
-        "name": "Virtusa 008",
+        "name": "company 008",
         "cost": 100,
         "quantity": 0,
         "locationId": 6,
@@ -82,7 +82,7 @@
       },
       {
         "id": 0.9253718202964611,
-        "name": "Virtusa 008",
+        "name": "company 008",
         "cost": 100,
         "quantity": 0,
         "locationId": 6,
@@ -90,7 +90,7 @@
       },
       {
         "id": 0.791281894533244,
-        "name": "Virtusa 008",
+        "name": "company 008",
         "cost": 100,
         "quantity": 150,
         "locationId": 6,
