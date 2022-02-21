@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +14,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ExpPipe } from './pipes/exp.pipe';
 import { DisplayComponent } from './components/display/display.component';
 import { Display2Component } from './components/display2/display2.component';
+import { GlobalErrorHandlerService } from './services/global-error-handler.service';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,12 @@ import { Display2Component } from './components/display2/display2.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DashboardModule
   ],
-  providers: [],
+  providers: [
+    { provide : ErrorHandler , useClass:GlobalErrorHandlerService }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
