@@ -8,6 +8,8 @@ import com.mycompany.mybankapi.model.Student;
 import com.mycompany.mybankapi.service.StudentsManager;
 import com.mycompany.mybankapi.service.StudentsManagerImpl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,6 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api")
 public class StudentsController extends BaseController{
 
+    Logger logger = LoggerFactory.getLogger(StudentsController.class);
+
     //private StudentsManager manager = new StudentsManagerImpl();
 
     @Autowired
@@ -30,6 +34,7 @@ public class StudentsController extends BaseController{
     
     @GetMapping(value="/fetch",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Student>> fetchAllStudets(){
+        logger.debug(this.getStudents().toString());
         return new ResponseEntity<List<Student>>(this.getStudents(),HttpStatus.OK);
     }
 
