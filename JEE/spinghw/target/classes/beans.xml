@@ -1,0 +1,53 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+   <bean 
+        id="superstar" 
+        init-method="init"
+        destroy-method="destroy"
+        class="com.company.springhw.beans.MyBean"
+        scope="singleton"
+        autowire="byType">
+    <property name="message" value="Welcome " />
+    <property name="child" ref="pettavelan" />
+   </bean>
+
+   <bean id="pettavelan" 
+            name="some name"
+            class="com.company.springhw.beans.MyChildBean"
+            autowire="byType">
+    <property name="age" value="46" />
+
+   </bean>
+
+   <bean id="arunachalam" abstract="true"
+            class="com.company.springhw.beans.MyChildBean"
+            autowire="byType">
+    <property name="age" value="46" />
+
+   </bean>
+
+    <bean id="manicbasha" 
+            class="com.company.springhw.beans.MyChildBean2" parent="arunachalam"
+            autowire="byType">
+        <property name="type" value="123" />
+   </bean>
+
+   <!-- <bean id="utils123" class="com.company.springhw.beans.MyUtilBean">
+    <property name="salary" value="2000" />
+   </bean> -->
+
+    <bean id="utils345" class="com.company.springhw.beans.MyUtilBean">
+        <constructor-arg index="0" value="12" />
+        <constructor-arg index="1" value="4001" />
+   </bean>
+
+    <!-- <property name="utils" ref="utils" /> -->
+
+
+</beans>
