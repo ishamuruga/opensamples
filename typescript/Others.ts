@@ -7,7 +7,7 @@ import {Customer, User} from './myfolder';
 //union data type
 let nameorage:number | string | Boolean = "";
 
-nameorage = "Virtusa";
+nameorage = "company";
 nameorage = 100*2;
 
 //tuple
