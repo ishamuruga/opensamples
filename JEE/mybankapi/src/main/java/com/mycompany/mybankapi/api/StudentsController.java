@@ -21,6 +21,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+/**
+ * This class is responsible for handling Students Controller
+ * @author RSUBRAMANIAN
+ * @version 1.0.1
+ * @serial 213245242243
+ */
 @RestController
 @RequestMapping("api")
 public class StudentsController extends BaseController{
@@ -32,6 +39,15 @@ public class StudentsController extends BaseController{
     @Autowired
     private StudentsManager manager;
     
+    /**
+     * Method that fetches all students records from the database
+     * @param None
+     * @return ResponseEntity of List of Student
+     * @author RSUBRAMANIAN
+     * @author ManicBasha
+     * 
+     * @Version 1.0.1
+     */
     @GetMapping(value="/fetch",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Student>> fetchAllStudets(){
         logger.debug(this.getStudents().toString());
