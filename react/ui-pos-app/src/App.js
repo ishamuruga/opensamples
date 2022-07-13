@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useRoutes } from "react-r
 import  Login from './components/secure/login';
 import Aboutus from "./components/secure/aboutus";
 import Navbar from "./components/layout/navbar";
+import Dashboard from "./components/secure/dashboard";
 
 
 const RouteCfg = () => {
@@ -13,7 +14,8 @@ const RouteCfg = () => {
   let rts = useRoutes([
     { path :"/", element:<Login/>},
     { path :"/login", element:<Login/>},
-    { path :"/aboutus", element:<Aboutus/>},
+    { path :"/dashboard", element:<Dashboard/>},
+    {}
   ]);
   return rts;
 }

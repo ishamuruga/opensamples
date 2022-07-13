@@ -1,0 +1,61 @@
+
+    .order-form .container {
+      color: #4c4c4c;
+      padding: 20px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+    }
+
+    .order-form-label {
+      margin: 8px 0 0 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .order-form-input {
+      width: 100%;
+      padding: 8px 8px;
+      border-width: 1px !important;
+      border-style: solid !important;
+      border-radius: 3px !important;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 1.2em;
+      background-color: transparent;
+      border-color: #cccccc;
+    }
+
+    .btn-submit:hover {
+      background-color: #090909 !important;
+    }
+
+    .smallred {
+      color: red;
+      font-size: 14px;
+      background-color: aliceblue;
+    }
+
+    select {
+      appearance: none;
+      outline: 0;
+      background: rgb(234, 133, 133);
+      background-image: none;
+      width: 100%;
+      height: 100%;
+      color: black;
+      cursor: pointer;
+      border: 1px solid black;
+      border-radius: 3px;
+  }
+   
+  .select {
+      position: relative;
+      display: block;
+      width: 15em;
+      height: 2em;
+      line-height: 3;
+      overflow: hidden;
+      border-radius: .25em;
+      padding-bottom: 10px;
+  }

@@ -10,16 +10,19 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-expand-sm navbar-light bg-light">
+        <a className="navbar-brand" href="#">
           ePOS
         </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item active">
               <Link className="nav-link" to="/">Login</Link>
             </li>
-            <li class="nav-item active">
+            <li className="nav-item active">
+              <Link className="nav-link" to="/dashboard">DashBoard</Link>
+            </li>
+            <li className="nav-item active">
               <Link className="nav-link" to="/aboutus">About Us</Link>
             </li>
           </ul>
