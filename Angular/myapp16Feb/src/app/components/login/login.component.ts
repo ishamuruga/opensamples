@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit,OnDestroy {
   submitForm(form:any){
     console.log("My Form data.........")
     let userid =form["email"];
-    if (userid != "virtusa") {
+    if (userid != "Company") {
       throw new Error("BankPortal:Login:SubmitForm:Invalid User:" + userid);
     } 
     console.log(form["email"]);
