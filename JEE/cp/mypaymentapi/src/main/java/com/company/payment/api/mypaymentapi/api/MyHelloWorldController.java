@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import org.apache.catalina.core.ApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,19 +20,47 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.company.payment.api.mypaymentapi.exception.InSufficientBalanceException;
+import com.company.payment.api.mypaymentapi.config.MyApplicationConfiguration;
+import com.company.payment.api.mypaymentapi.config.MyAwsConfiguration;
+import com.company.payment.api.mypaymentapi.config.MyErrorConfiguration;
+import com.company.payment.api.mypaymentapi.exception.FundTransferFailureException;
 import com.company.payment.api.mypaymentapi.model.FundTransferRequest;
+import com.company.payment.api.mypaymentapi.service.FundTransferManger;
 
 import ch.qos.logback.core.pattern.color.ForegroundCompositeConverterBase;
 
 @RestController
 @RequestMapping("/api")
 public class MyHelloWorldController extends BaseController {
+
+    @Autowired    
+    private MyApplicationConfiguration config;
+
+    @Autowired
+    private MyAwsConfiguration awsConfig;
+
+    @Autowired
+    private MyErrorConfiguration errConfig;
+
+    @Autowired
+    @Qualifier("fundTransferManagerImpl2")
+    private FundTransferManger fundService;
     
     @GetMapping(value = "/init")
     public String getNames(){
-        String[] names = {"name1","name2","name3"};
+        String[] names = {"name1",
+            "name2",
+                "name3",
+                config.getDbPassword(),
+                config.getDbUrl(),
+                config.getDbUserName(),
+                awsConfig.getUrl(),
+                fundService.getTxnStatys("Txn1232323232"),
+                errConfig.getHostName(),
+                errConfig.getAdditionalHeaders().toString()};
 
+        //System.out.println(errConfig.getErrorPacket().toString());
+        //System.out.println(fundService.getTxnStatys("Txn1232323232"));
         return Arrays.toString(names);
     }
 
@@ -44,7 +74,7 @@ public class MyHelloWorldController extends BaseController {
     }
 
     @PostMapping(value = "/fundtransfer",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<FundTransferRequest>> createFundRequest(@RequestBody @Valid FundTransferRequest req) throws InSufficientBalanceException{
+    public ResponseEntity<List<FundTransferRequest>> createFundRequest(@RequestBody @Valid FundTransferRequest req) throws FundTransferFailureException{
 
         List<FundTransferRequest> res = getFundTransfers();
 
@@ -53,7 +83,7 @@ public class MyHelloWorldController extends BaseController {
         if (req.getAmount()==1) {
             int j = 8/0;
         } else if (req.getAmount() > 500) {
-            throw new InSufficientBalanceException("InValid Balance");
+            throw new FundTransferFailureException("ERR001", "InValid Balance","Message from Core bank");
         }
 
         return new ResponseEntity<List<FundTransferRequest>>(res,HttpStatus.OK);

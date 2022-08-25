@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import com.company.payment.api.mypaymentapi.exception.InSufficientBalanceException;
+import com.company.payment.api.mypaymentapi.exception.FDCreationException;
+import com.company.payment.api.mypaymentapi.exception.FundTransferFailureException;
 import com.company.payment.api.mypaymentapi.model.ErrorPacket;
 
 @ControllerAdvice
@@ -41,7 +42,7 @@ public class GlobalExceptionController extends ResponseEntityExceptionHandler {
         return new ResponseEntity<ErrorPacket>(ep, HttpStatus.BAD_GATEWAY);
     }
 
-    @ExceptionHandler(value = {InSufficientBalanceException.class})
+    @ExceptionHandler(value = {FundTransferFailureException.class,FDCreationException.class})
     public ResponseEntity<ErrorPacket> handleCheckedException(Exception ex){
 
         ErrorPacket ep = new ErrorPacket();
