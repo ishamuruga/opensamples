@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -40,6 +41,15 @@ public class MyHibernateConfiguration {
 
     @Value("${entitymanager.packagesToScan}")
     private String ENTITYMANAGER_PACKAGES_TO_SCAN;
+
+    // <bean id = "dataSource"
+    // class = "org.springframework.jdbc.datasource.DriverManagerDataSource">
+    //    <property name = "driverClassName" value = "com.mysql.cj.jdbc.Driver"/>
+    //    <property name = "url" value = "jdbc:mysql://localhost:3306/TEST"/>
+    //    <property name = "username" value = "root"/>
+    //    <property name = "password" value = "admin"/>
+    // </bean>
+
 
     @Bean
     public DataSource dataSource() {

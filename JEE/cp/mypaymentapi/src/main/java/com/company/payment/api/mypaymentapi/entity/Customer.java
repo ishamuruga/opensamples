@@ -8,6 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -28,7 +32,11 @@ public class Customer extends BaseEntity {
     @Column(unique = true)
     private String email;
     
+    @JsonFormat(pattern = "dd-mm-yyyy")
+    @Temporal(TemporalType.DATE)
     private Calendar dob;
     
+    @JsonFormat(pattern = "dd-mm-yyyy hh:mm:ss")
+    @Temporal(TemporalType.TIMESTAMP)
     private Calendar ts;
 }
