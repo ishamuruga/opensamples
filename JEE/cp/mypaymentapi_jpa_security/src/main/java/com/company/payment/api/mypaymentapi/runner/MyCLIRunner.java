@@ -33,7 +33,7 @@ import com.company.payment.api.mypaymentapi.repo.AddressRepository;
 import com.company.payment.api.mypaymentapi.repo.OrderRepository;
 import com.company.payment.api.mypaymentapi.repo.PaymentRepo;
 import com.company.payment.api.mypaymentapi.repo.ProductRepository;
-import com.company.payment.api.mypaymentapi.repo.UserRepo;
+import com.company.payment.api.mypaymentapi.repo.UserRepository;
 import com.company.payment.api.mypaymentapi.service.AddressManager;
 import com.company.payment.api.mypaymentapi.service.CustomerManager;
 
@@ -53,7 +53,7 @@ public class MyCLIRunner implements CommandLineRunner {
     private AddressRepository addRepo;
 
     @Autowired
-    private UserRepo userRepo;
+    private UserRepository userRepo;
 
     @Autowired
     private PaymentRepo payRepo;
