@@ -1,0 +1,12 @@
+ docker network create mysqlnw
+
+docker build -t retailbanking-api .
+
+docker container run --network mysqlnw --name retailbanking-api -p 8090:8080 -d retailbanking-api
+
+http://localhost:8090/api/save
+{
+  
+  "name": "LC"
+}
+http://localhost:8090/api/accounts

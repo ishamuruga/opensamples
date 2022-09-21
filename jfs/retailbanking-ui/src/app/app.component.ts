@@ -17,8 +17,10 @@ export class AppComponent {
 
   title = 'retailbanking-ui';
 
+  url = "http://localhost:8090/api/accounts";
+
   handleClick() {
-    this.httpc.get<Account[]>("http://localhost:8080/api/accounts").toPromise().then((x)=> {
+    this.httpc.get<Account[]>(this.url).toPromise().then((x)=> {
       console.log(x as Account[]);
       this.accts = x as Account[];
       this.message = "Completed"
