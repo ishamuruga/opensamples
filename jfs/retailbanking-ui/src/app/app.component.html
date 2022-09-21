@@ -1,0 +1,9 @@
+<div>
+
+  <h1> Welcome to Angular </h1>
+  <button (click)="handleClick()">Get Accounts</button>
+  <div class="redc" *ngFor="let acct of accts">
+    The account details {{acct.id}},{{acct.name}}
+  </div>
+  <p>{{message}}</p>
+  </div>
