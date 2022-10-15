@@ -1,6 +1,6 @@
 const Config =  {
-    url : "http://localhost:4000",
-    auth : "/users/authenticate"
+    url : "http://localhost:8080",
+    auth : "/api/auth/signin"
 }
 
 export default Config;

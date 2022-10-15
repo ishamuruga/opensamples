@@ -9,8 +9,8 @@ export default function Login() {
   // https://mdbootstrap.com/docs/standard/extended/login/
 
   const initialValues = {
-    email: "raj@gmail.com",
-    password: "raj12345",
+    email: "ramarajan@gmail.com",
+    password: "ramarajan",
     rflag: false,
   };
 
