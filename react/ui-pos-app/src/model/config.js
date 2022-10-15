@@ -3,5 +3,5 @@ const Config =  {
     auth : "/api/auth/signin"
 }
 
-export default Config;
+export default Config;   
 
