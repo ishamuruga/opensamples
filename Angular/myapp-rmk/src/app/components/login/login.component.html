@@ -1,0 +1,16 @@
+<div>
+    <div *ngIf="!isLoggedIn" class="error">
+        Invalid Login
+    </div>
+    <p>login works!</p>
+    <input type="text" [(ngModel)]="userid"/>
+    <br/>
+    <button (click)="doLogin()">LoginCompleted</button>
+    <br/>
+    <button (click)="doPromise()">InvokePromise</button>
+    <div class="debug">
+        <p>Logged in user is...{{userid}}</p>
+    </div>
+</div>
+
+
