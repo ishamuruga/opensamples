@@ -9,7 +9,7 @@ import { CommonDataService } from 'src/app/services/common-data.service';
 })
 export class LoginComponent implements OnInit {
 
-  userid:string="";
+  userid:string="rmkadmin";
   isLoggedIn:boolean=true;
 
   constructor(private rutr:Router,private cData:CommonDataService){}

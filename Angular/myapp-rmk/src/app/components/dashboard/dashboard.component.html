@@ -1,1 +1,21 @@
 <p>dashboard works!</p>
+<div>
+ 
+    <button type="button" (click)="fetchProds()">Get_via_Promise</button>
+    <button type="button" (click)="fetchProds_v2()">Get_via_Observable</button>
+    <br/>
+    <table border="1">
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>cost</td>
+            <td>family Id</td>
+        </tr>
+        <tr *ngFor="let prod of prods">
+            <td>{{prod.id}}</td>
+            <td>{{prod.name}}</td>
+            <td>{{prod.cost}}</td>
+            <td>{{prod.familyId}}</td>
+        </tr>
+    </table>
+</div>
