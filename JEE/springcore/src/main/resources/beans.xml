@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+  <!-- scope= prototype -->
+      <!-- <property name="act" ref="myaccount" />
+    <property name="act2" ref="myaccount2" /> -->
+  
+  <bean 
+    id="mycustomer" 
+    name="mycustomer" 
+    class="com.payment.springcore.beans.Customer"
+    scope="singleton"
+    autowire="byType"
+    init-method="init"
+    destroy-method="destroy"
+    >
+    <property name="custName" value="Welcome to Spring Core"/>
+    <property name="age" value="45"/>
+  </bean>
+
+
+  <bean id="act123" name="act123" class="com.payment.springcore.beans.Account">
+    <property name="accNbr" value="00887843423232" />
+  </bean>
+
+  <!-- <bean id="act2" name="act2" class="com.payment.springcore.beans.Account">
+    <property name="accNbr" value="00887843594594594" />
+  </bean> -->
+
+</beans>
