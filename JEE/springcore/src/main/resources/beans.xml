@@ -26,7 +26,57 @@
 
   <bean id="act123" name="act123" class="com.payment.springcore.beans.Account">
     <property name="accNbr" value="00887843423232" />
+    <property name="statements">
+        <list>
+          <ref bean="stmt1"/>
+          <ref bean="stmt2"/>
+          <ref bean="stmt3"/>
+        </list>
+    </property>
+    <property name="anyObjects">
+       <list>
+          <value>SUper</value>
+          <value>123</value>
+          <ref bean="stmt1"/>
+        </list>
+    </property>
+    <property name="myMaps">
+      <map>
+        <entry key="key1" value-ref="stmt1"/>
+        <entry key="key2" value="Dell"/>
+      </map>
+    </property>
+    <property name="aType">
+      <bean class="com.payment.springcore.beans.AccountType">
+        <property name="id" value="12"/> <!--setId()-->
+        <property name="name" value="SpringCCOORREE" />
+      </bean>
+    </property>
   </bean>
+
+
+  <bean id="stmt1" name="stmt1" class="com.payment.springcore.beans.Statement">
+        <property name="id" value="1"/>
+        <property name="name" value="stmt1" />
+  </bean>
+
+  <bean id="stmt2" name="stmt2" class="com.payment.springcore.beans.Statement">
+        <property name="id" value="2"/>
+        <property name="name" value="stmt2" />
+  </bean>
+
+  <bean id="stmt3" name="stmt3" class="com.payment.springcore.beans.Statement">
+        <property name="id" value="3"/>
+        <property name="name" value="stmt3" />
+  </bean>
+
+
+  <bean id="aObj" name="aObj" class="com.payment.springcore.beans.AnotherObject">
+        <constructor-arg  index="1" ref="stmt3"/>
+        <constructor-arg  index="0" ref="act123"/>
+  </bean>
+
+  
 
   <!-- <bean id="act2" name="act2" class="com.payment.springcore.beans.Account">
     <property name="accNbr" value="00887843594594594" />

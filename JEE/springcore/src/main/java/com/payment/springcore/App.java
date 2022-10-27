@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.payment.springcore.beans.AnotherObject;
 import com.payment.springcore.beans.Customer;
 
 /**
@@ -19,9 +20,13 @@ public class App
         //Inversion of Control
         //Customer cust1 = (Customer) context.getBean("mycustomer");
         Customer cust1 = context.getBean("mycustomer",Customer.class);
-        System.out.println(cust1.toString());
+        //System.out.println(cust1.toString());
         //cust1.setAge(100);
         //cust1.counter++;
+
+        AnotherObject aO=context.getBean("aObj",AnotherObject.class);
+
+        System.out.println(aO.toString());
         
         // Customer cust2 = context.getBean("mycustomer",Customer.class);
         // cust2.setAge(200);

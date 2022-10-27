@@ -48,11 +48,11 @@ public class Customer extends BaseBean {
         this.act2 = act2;
     }
 
+  
     @Override
     public String toString() {
         return "Customer [custName=" + custName + ", age=" + age + ", act=" + act + ", act2=" + act2 + "]";
     }
-
 
     public void init() {
         this.age = 10;
