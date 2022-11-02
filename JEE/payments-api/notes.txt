@@ -1,0 +1,17 @@
+{
+  "name":"MS.Dhoni",
+  "email":"dhoni@gmail.com",
+  "dob":"20/11/1997",
+  "bankAccounts":[
+    {
+      "bankCode":"BNK001",
+      "accNbr":"009843423",
+      "balance":2500
+    },
+    {
+      "bankCode":"BNK001",
+      "accNbr":"009843424",
+      "balance":2501
+    }
+  ]
+}
