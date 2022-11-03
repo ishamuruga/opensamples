@@ -70,38 +70,21 @@ export default function Login() {
     }
     doAuth(formValues)
       .then((x) => {
-        //let a = JSON.stringify(x);
-        //console.log(a);
+
         let data = x.data;
-        console.log(data);
-        console.log(
-          x.data.id +
-            "," +
-            x.data.firstName +
-            "," +
-            x.data.lastName +
-            "," +
-            x.data.token
-        );
-        //let user = new User(x.data.id,x.data.firstName + x.data.lastName,x.data.token,x.data.statusText);
+        
         let user = new User(
           data.id,
-          data.firstName + data.lastName,
-          data.usrname,
-          data.token,
-          data.updatedAt
+          data.username,
+          data.username,
+          data.accessToken,
+          data.roles
         );
-        let authUser = {
-          id: data.id,
-          name: data.firstName + data.lastName,
-          status: data.updatedAt,
-          token: data.token,
-        };
 
-        console.log(authUser);
+
+        console.log(user);
         sessionStorage.setItem("auth", JSON.stringify(user));
-        //sessionStorage.setItem("auth2", JSON.stringify(authUser));
-        //sessionStorage.setItem("auth",user);
+
 
         nav("/dashboard");
       })
