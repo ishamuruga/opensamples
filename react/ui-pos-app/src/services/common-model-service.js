@@ -1,6 +1,7 @@
 import { of } from "rxjs";
 import Category from "../model/category"
 import config from './config';
+import {getAuthToken} from './common';
 
 export const Categories = () => {
     let categories = [
@@ -14,6 +15,7 @@ export const Categories = () => {
 
 
     const fetchAll = () => {
+        console.log(getAuthToken())
         let url = config.baseurl + "/api/pos/categories";
         axios.get(url)
             .then(res => {

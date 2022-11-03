@@ -108,9 +108,12 @@ public class AppRunner implements CommandLineRunner {
         cates.add(cate3);
         cates.add(cate4);
         cates.add(cate5);
-        cates.add(cate6);
 
-        //cateService
+        cateService.save(cate1);
+        cateService.save(cate2);
+        cateService.save(cate3);
+        cateService.save(cate4);
+        cateService.save(cate5);
         
 
         System.out.println("Completed..........................");
