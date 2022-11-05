@@ -18,7 +18,7 @@ import com.apstore.api.pos.apstoreposapi.vo.FetchCategoryRes;
 @CrossOrigin(origins = "http://localhost:3000")
 public class CommonController extends BaseController {
     
-    @Autowired
+    @Autowired   
     private CategoryManager cateService;
 
     @GetMapping(value = "/categories",produces = MediaType.APPLICATION_JSON_VALUE)
