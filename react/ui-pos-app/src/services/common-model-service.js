@@ -1,6 +1,7 @@
 import { of } from "rxjs";
 import Category from "../model/category"
 import config from './config';
+import axios from 'axios';
 import {getAuthToken} from './common';
 
 export const Categories = () => {
