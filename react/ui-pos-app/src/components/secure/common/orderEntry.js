@@ -50,7 +50,9 @@ export default function OrderEntry(props) {
     const subs = Categories()
       .fetchAll()
       .subscribe((x) => {
-        setCtgr(x);
+        
+        console.log(x);
+        //setCtgr(x);
       });
     return () => {
       // Clean up the subscription
