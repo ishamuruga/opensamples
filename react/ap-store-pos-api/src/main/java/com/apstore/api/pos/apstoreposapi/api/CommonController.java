@@ -1,5 +1,6 @@
 package com.apstore.api.pos.apstoreposapi.api;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaTypeFactory;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +15,10 @@ import com.apstore.api.pos.apstoreposapi.vo.FetchCategoryRes;
 
 @RestController
 @RequestMapping("/api/pos")
+@CrossOrigin(origins = "http://localhost:3000")
 public class CommonController extends BaseController {
     
+    @Autowired
     private CategoryManager cateService;
 
     @GetMapping(value = "/categories",produces = MediaType.APPLICATION_JSON_VALUE)

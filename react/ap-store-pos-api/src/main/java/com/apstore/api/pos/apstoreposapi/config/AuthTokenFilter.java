@@ -1,6 +1,7 @@
 package com.apstore.api.pos.apstoreposapi.config;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -32,6 +33,8 @@ public class AuthTokenFilter  extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
         throws ServletException, IOException {
       try {
+        String uull = request.getRequestURI();
+        System.out.println("##########IN JWT FLTER..................." + uull);
         String jwt = parseJwt(request);
         if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
           String username = jwtUtils.getUserNameFromJwtToken(jwt);

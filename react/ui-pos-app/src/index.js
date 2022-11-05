@@ -10,7 +10,10 @@ import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '@fortawesome/fontawesome-free/js/all.js';
 
+import {jwtInterceptor} from './core/jwt.interceptor';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+jwtInterceptor();
 root.render(
   // <React.StrictMode>
     <App />
