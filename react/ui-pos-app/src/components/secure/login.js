@@ -32,7 +32,7 @@ export default function Login() {
         [name]: isCheckBox ? event.target.checked : value,
       };
     });
-    console.log(formValues);
+    
   };
 
   const validate = (values) => {
@@ -62,8 +62,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     validate(formValues);
-    console.log(valid);
-    console.log(e);
+
 
     if (!validate(formValues)) {
       return;
@@ -82,7 +81,6 @@ export default function Login() {
         );
 
 
-        console.log(user);
         sessionStorage.setItem("auth", JSON.stringify(user));
 
 

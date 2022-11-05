@@ -103,6 +103,9 @@ public class AppRunner implements CommandLineRunner {
         Category cate4 = new Category();
         cate4.setName("Groceries");
 
+        Category cate6 = new Category();
+        cate6.setName("Toys");
+
         cates.add(cate1);
         cates.add(cate2);
         cates.add(cate3);
@@ -114,7 +117,7 @@ public class AppRunner implements CommandLineRunner {
         cateService.save(cate3);
         cateService.save(cate4);
         cateService.save(cate5);
-        
+        cateService.save(cate6);
 
         System.out.println("Completed..........................");
 

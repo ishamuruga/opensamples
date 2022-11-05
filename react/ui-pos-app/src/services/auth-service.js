@@ -8,7 +8,6 @@ const doAuth = (auth) => {
         "username" : auth.email,
         "password" : auth.password
     };
-    console.log(user);
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

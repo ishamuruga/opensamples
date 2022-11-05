@@ -7,24 +7,8 @@ export default function Dashboard() {
   const [items,setItems] = useState([]);
 
   const doHandleAddItem = (e) => {
-    console.log("==================")
-    console.log(e);
-    console.log(items);
-
-
     setItems(prev=>[...prev,e]);
-    //let dat = items;  
-    //console.log(dat.e);
-    //dat.push(e);
-    //setItems(dat);
-    //setItems(dat);
-    //// setItems(prev=>{
-    //   return {
-    //     ...prev,
-    //     e
-    //   }
-    // });
-    console.log(items);
+
   }
 
   // useEffect(()=>{

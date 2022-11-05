@@ -26,6 +26,7 @@ public class CommonController extends BaseController {
     public ResponseEntity<FetchCategoryRes> fetchAllCategories(){
         FetchCategoryRes res = new FetchCategoryRes();
         res.setCategories(cateService.fetchAll());
+        System.out.println(res);
 
         return new ResponseEntity<FetchCategoryRes>(res,HttpStatus.OK);
     }

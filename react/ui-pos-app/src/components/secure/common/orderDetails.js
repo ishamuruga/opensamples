@@ -1,17 +1,15 @@
 import React, { useState,useEffect } from "react";
 
 export default function OrderDetails({itms}) {
-  console.log(itms);
-  let itemCosts = [10.23, 45.41, 67.89, 67.12, 89.57];
+  let itemCosts = [10.23, 45.41, 67.89, 67.12, 89.57,23,45,6,,7,8,9];
 
   let processedItems = itms.map(x=>{
-    console.log("###########33");
     console.log(x);
     let c = itemCosts[x.category];
     x.cost = c * x.quantity;
     return x;
   });
-  console.log(processedItems);
+
 
 
   //console.log(props.itms);

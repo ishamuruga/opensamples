@@ -23,11 +23,9 @@ export default function OrderEntry(props) {
         [name]: isCheckBox ? event.target.checked : value,
       };
     });
-    console.log(formValues);
   };
 
   const onChangeCategory = (e) => {
-    console.log(e.target.value);
     setFormValues({
       ...formValues,
       category: e.target.value,
@@ -35,28 +33,29 @@ export default function OrderEntry(props) {
   };
 
   const doSubmitNewItem = (e) => {
-    console.log(formValues);
     let err = doValidate(formValues);
-  
+
     if (Object.keys(err).length > 0) {
-      console.log("Error Data");
       return;
     }
-    let item = new Item(0,formValues.product,formValues.quantity,formValues.category);
+    let item = new Item(0, formValues.product, formValues.quantity, formValues.category);
     props.onDoAddItem(item);
   };
 
   useEffect(() => {
+    console.log(" iam here...");
     const subs = Categories()
       .fetchAll()
-      .subscribe((x) => {
-        
-        console.log(x);
-        //setCtgr(x);
+      .then((x) => {
+        console.log("$#$#$#$#$#$#$#$#$#$#$#$#$#$$#$#$#")
+        console.log(x.data.categories);
+        console.log(JSON.stringify(x));
+
+        setCtgr(x.data.categories);
       });
     return () => {
       // Clean up the subscription
-      subs.unsubscribe();
+      //subs.unsubscribe();
     };
     console.log("=======================");
   }, []);
@@ -87,9 +86,9 @@ export default function OrderEntry(props) {
     if (fValues.category <= 0) {
       errors.category = "Category Cannot be Zero/0";
     }
-    console.log(errors);
-    if (Object.keys(errors).length>0) {
-      console.log("setting the valid to false")
+    //console.log(errors);
+    if (Object.keys(errors).length > 0) {
+      //console.log("setting the valid to false")
       setValid(false);
     }
     setErrors(errors);
@@ -127,13 +126,14 @@ export default function OrderEntry(props) {
               />
             </div>
             <div className="col-sm">
-            <select id="select" onChange={onChangeCategory}>
+              <select id="select" onChange={onChangeCategory}>
+                <option key="0" value="0">Please select a Category</option>
                 {ctgr.map((x, id) => {
-                    return (
-                      <option key={x.id} value={x.id}>{x.description}</option>
-                    );
-                  })}
-                </select>
+                  return (
+                    <option key={x.id} value={x.id}>{x.name}</option>
+                  );
+                })}
+              </select>
             </div>
             <div className="col-sm">
               <button
