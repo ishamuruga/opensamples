@@ -29,7 +29,7 @@ export const Categories = () => {
     }
 
     const findById = (id) => {
-        return of(...categories);
+        //return of(...categories);
     }
 
     return {
