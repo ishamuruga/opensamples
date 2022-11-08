@@ -39,7 +39,7 @@ public class Customer {
     @Temporal(TemporalType.DATE)
     private Calendar dob;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "cust_id")
     private Set<BankAccount> bankAccounts;
 }

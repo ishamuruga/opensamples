@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.company.payments.api.paymentsapi.config.MyDbConfig;
 import com.company.payments.api.paymentsapi.config.MyDefaultConfig;
+import com.company.payments.api.paymentsapi.config.MySpecialConfig;
 import com.company.payments.api.paymentsapi.dto.CustomerResponse;
 import com.company.payments.api.paymentsapi.service.CreditCardPaymentManagerImpl;
 import com.company.payments.api.paymentsapi.service.CustomerManager;
@@ -32,10 +34,23 @@ public class PaymentApi extends BaseApiController {
     @Autowired
     private MyDbConfig dbConfig;
 
+    @Autowired
+    private MySpecialConfig specialCfg;
+
+    @Autowired
+    private List<String> myTopics;
+
 
     @RequestMapping(method = RequestMethod.GET, value = "/init", produces = MediaType.APPLICATION_JSON_VALUE)
     public String sayHello() {
-        return "Hi, i am from Spring Boot";
+        
+        return "Hi, i am from Spring Boot".concat(specialCfg.getNames().toString()).concat(myTopics.toString());
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/err/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String fetchError(@PathVariable String id) {
+        System.out.println(id);
+        return "The Error Message".concat(specialCfg.getErrMap().get(id));
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/fetch", produces = MediaType.APPLICATION_JSON_VALUE)

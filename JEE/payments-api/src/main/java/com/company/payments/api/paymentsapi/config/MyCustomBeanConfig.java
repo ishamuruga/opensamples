@@ -1,5 +1,8 @@
 package com.company.payments.api.paymentsapi.config;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,5 +20,14 @@ public class MyCustomBeanConfig {
     @Scope("singleton")
     public CustomerApiViewHelper customerApiViewHelper() {
         return new CustomerApiViewHelper();
+    }
+
+    /**
+     * Not Recommended ####
+     * @return List of Names
+     */
+    @Bean
+    public List<String> myTopics(){
+        return Arrays.asList("action","comedy","horror","family");
     }
 }
