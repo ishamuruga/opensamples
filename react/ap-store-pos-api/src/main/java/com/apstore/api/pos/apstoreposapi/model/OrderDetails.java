@@ -38,6 +38,8 @@ public class OrderDetails {
 
     private int quantity;
 
+    private String itemName;
+
     private double cost;
 
     @Temporal(TemporalType.TIMESTAMP)
