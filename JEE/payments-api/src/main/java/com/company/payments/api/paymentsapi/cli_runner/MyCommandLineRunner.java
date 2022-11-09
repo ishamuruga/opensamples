@@ -12,11 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.company.payments.api.paymentsapi.entity.AccountStatement;
 import com.company.payments.api.paymentsapi.entity.AccountType;
 import com.company.payments.api.paymentsapi.entity.BankAccount;
 import com.company.payments.api.paymentsapi.entity.Customer;
 import com.company.payments.api.paymentsapi.entity.Role;
 import com.company.payments.api.paymentsapi.entity.User;
+import com.company.payments.api.paymentsapi.repo.BankAccountRepo;
+import com.company.payments.api.paymentsapi.repo.BankAccountStatementRepo;
+import com.company.payments.api.paymentsapi.repo.BankAccountTypeRepo;
 import com.company.payments.api.paymentsapi.repo.CustomerRepo;
 import com.company.payments.api.paymentsapi.repo.RoleRepo;
 import com.company.payments.api.paymentsapi.service.AccountTypeManager;
@@ -38,6 +42,16 @@ public class MyCommandLineRunner implements CommandLineRunner {
     @Autowired
     private RoleRepo roleRepo;
 
+    @Autowired
+    private BankAccountTypeRepo bankTypeRepo;
+
+    @Autowired
+    private BankAccountRepo accountRepo;
+
+    @Autowired
+    private BankAccountStatementRepo stmtRepo;
+
+
     @Override
     public void run(String... args) throws Exception {
         System.out.println("############################################");
@@ -50,18 +64,33 @@ public class MyCommandLineRunner implements CommandLineRunner {
         // AccountType aType2 = new AccountType();
         // aType2.setType("CURRENT");
 
-        AccountType aType1 = accTypeService.fetchById(1);
-        AccountType aType2 = accTypeService.fetchById(2);
+
+        if(!accTypeService.fetchById(1).isPresent()){
+            AccountType actType1 = new AccountType();
+            actType1.setId(1);
+            actType1.setType("SAV");
+
+            AccountType actType2 = new AccountType();
+            actType2.setId(2);
+            actType2.setType("CURR");
+
+            accTypeService.save(actType1);
+            accTypeService.save(actType2);
+        }
+
+
+        AccountType aType1 = accTypeService.fetchById(1).get();
+        AccountType aType2 = accTypeService.fetchById(2).get();
 
         BankAccount ba1 = new BankAccount();
         ba1.setAType(aType2);
-        ba1.setAccNbr("098843343" + Math.random());
+        ba1.setAccNbr("00770101010");
         ba1.setBalance(1000);
         ba1.setBankCode("BNK001");
 
         BankAccount ba2 = new BankAccount();
         ba2.setAType(aType1);
-        ba2.setAccNbr("09884343434" + Math.random());
+        ba2.setAccNbr("00770101011");
         ba2.setBalance(1001);
         ba2.setBankCode("BNK002");
 
@@ -108,7 +137,41 @@ public class MyCommandLineRunner implements CommandLineRunner {
         userManager.save(u1);
 
         // userManager.fetchALL().forEach(System.out::println);
-        // custService.save(cust);
+        //custService.save(cust);
+
+        BankAccount tempBa1 = accountRepo.findByAccNbr("00770101011").get(0);
+        BankAccount tempBa2 = accountRepo.findByAccNbr("00770101010").get(0);
+
+        System.out.println(tempBa1);
+        System.out.println(tempBa2);
+        for(int i=0;i<100;i++){
+            AccountStatement stmt = new AccountStatement();
+            stmt.setBankAccount(tempBa1);
+            stmt.setDescription("Txn Ref number.." + i);
+            if (i%2==0) {
+                stmt.setIsCredit(true);
+            } else {
+                stmt.setIsCredit(false);
+            }
+            stmt.setValue(i*100);
+
+            stmtRepo.save(stmt);
+
+            AccountStatement stmt2 = new AccountStatement();
+            stmt2.setBankAccount(tempBa2);
+            stmt2.setDescription("Txn Ref2 number.." + i);
+            if (i%2==0) {
+                stmt2.setIsCredit(false);
+            } else {
+                stmt2.setIsCredit(true);
+            }
+            stmt2.setValue(i*200);
+
+            stmtRepo.save(stmt2);
+        }
+
+        // BankAccount ba1 = new BankAccount();
+        // ba1.setAType(aType2);
     }
 
 }

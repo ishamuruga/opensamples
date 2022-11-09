@@ -1,5 +1,7 @@
 package com.company.payments.api.paymentsapi.entity;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -15,11 +18,13 @@ import org.hibernate.validator.constraints.ru.INN;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "tbl_bank_account")
+@ToString
 public class BankAccount {
     
     @Id
@@ -34,8 +39,12 @@ public class BankAccount {
     private double balance;
 
     @OneToOne(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
-    @JoinColumn(name = "bank_acc_id")
+    @JoinColumn(name = "bank_acc_type_id")
     private AccountType aType;
+
+    // @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    // @JoinColumn(name = "bank_acct_id")
+    // private List<AccountStatement> stmts;
 
     @Override
     public int hashCode() {
