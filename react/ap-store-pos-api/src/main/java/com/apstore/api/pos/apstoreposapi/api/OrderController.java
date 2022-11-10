@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.apstore.api.pos.apstoreposapi.api.vhelper.CreateOrderControllerVHelper;
+import com.apstore.api.pos.apstoreposapi.model.Order;
 import com.apstore.api.pos.apstoreposapi.service.OrderManager;
 import com.apstore.api.pos.apstoreposapi.vo.CreateOrderRequest;
 import com.apstore.api.pos.apstoreposapi.vo.CreateOrderResponse;
@@ -15,12 +17,22 @@ import com.apstore.api.pos.apstoreposapi.vo.CreateOrderResponse;
 @RequestMapping("/api/pos")
 @CrossOrigin(origins = "http://localhost:3000")
 public class OrderController {
-    
+
     @Autowired
     private OrderManager orderService;
 
+    @Autowired
+    private CreateOrderControllerVHelper createOrderVHelper;
+
     public ResponseEntity<CreateOrderResponse> save(@RequestBody CreateOrderRequest req) {
-return null;
+        
+        Order order = createOrderVHelper.createOrderFromVo(req);
+        
+        orderService.saveOrder(order);
+
+        CreateOrderResponse res = createOrderVHelper.createResponsefromOrder(order);
+
+        return ResponseEntity.ok(res);
     }
 
 }

@@ -19,19 +19,7 @@ public class CreateOrderRequest {
 
     private double cost;
 
-    private OrderDetails[] orders;
+    private OrderDetailsVo[] orders;
     
 }
 
-@Getter
-@Setter
-@ToString
-class OrderDetails {
-    private int quantity;
-
-    private String itemName;
-
-    private String category;
-
-    private double cost;
-}
