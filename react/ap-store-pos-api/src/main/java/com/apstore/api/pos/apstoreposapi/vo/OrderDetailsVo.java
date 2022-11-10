@@ -15,4 +15,5 @@ public class OrderDetailsVo {
     private String category;
 
     private double cost;
+    
 }
