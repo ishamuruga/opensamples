@@ -1,4 +1,6 @@
 import React,{useState,useEffect} from 'react'
+import ModelWindow from '../../core/modelwindow';
+import { MessageService } from '../../services/data-comm';
 import OrderDetails from './common/orderDetails'
 import OrderEntry from './common/orderEntry'
 
@@ -11,15 +13,23 @@ export default function Dashboard() {
 
   }
 
-  // useEffect(()=>{
-  //   console.log(items);
-  // },[items]);
+  useEffect(()=>{
+    
+    MessageService.receive().subscribe(x=>{
+      if (x.event == "EVT_CREATE_ORDER"){
+        console.log(" WIN WIN");
+      }
+    })
+    
+    
+  },[]);
 
 
   return (
     <div>
-      <OrderEntry onDoAddItem={doHandleAddItem}/>
-      <OrderDetails itms={items}/>
+      <ModelWindow/>
+      {/* <OrderEntry onDoAddItem={doHandleAddItem}/>
+      <OrderDetails itms={items}/> */}
     </div>
   )
 }

@@ -13,13 +13,13 @@ import lombok.ToString;
 @Setter
 @ToString
 public class CreateOrderRequest {
-    private int id;
+    private String id;
 
     private String name;
 
     private double cost;
 
-    private OrderDetailsVo[] orders;
+    private OrderDetailsVo[] orderDetails;
     
 }
 

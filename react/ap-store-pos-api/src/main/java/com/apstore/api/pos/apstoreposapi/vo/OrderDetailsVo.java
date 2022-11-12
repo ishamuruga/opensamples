@@ -12,7 +12,7 @@ public class OrderDetailsVo {
 
     private String itemName;
 
-    private String category;
+    private int category;
 
     private double cost;
     

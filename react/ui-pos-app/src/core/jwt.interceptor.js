@@ -14,6 +14,8 @@ export function jwtInterceptor() {
             
             if (request.url.indexOf("api/auth/signin") < 0) {
                 request.headers.common.Authorization = `Bearer ${token}`;
+                //request['headers']['common']['Accept'] = 'application/json; charset=utf-8';
+                //request.headers.common.Accept = "application/json; charset=utf-8";
             }
             
             //request.headers.common.Authorization = `Bearer ${account.token}`;

@@ -28,11 +28,12 @@ public class CreateOrderControllerVHelper {
     
     public Order createOrderFromVo(CreateOrderRequest req) {
         Order order = new Order();
+        order.setOrderRefNo(req.getId());
         order.setCost(req.getCost());
         order.setName(req.getName());
         order.setTs(Calendar.getInstance());
 
-        OrderDetailsVo[] orderDetailsVos = req.getOrders();
+        OrderDetailsVo[] orderDetailsVos = req.getOrderDetails();
 
         List<OrderDetails> orderDetails = new ArrayList();
 
@@ -41,7 +42,7 @@ public class CreateOrderControllerVHelper {
             Category ctrg = new Category();
             OrderDetails ordDet = new OrderDetails();
 
-            ctrg.setName(ovo.getCategory());
+            ctrg.setId(ovo.getCategory());
             ordDet.setCategory(ctrg);
             ordDet.setCost(ovo.getCost());
             ordDet.setItemName(ovo.getItemName());

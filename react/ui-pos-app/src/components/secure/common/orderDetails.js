@@ -1,17 +1,31 @@
 import React, { useState, useEffect } from "react";
+import CreateOrderVo from "../../../model/createordervo";
+import OrderDetailsVo from "../../../model/orderdetailsvo";
+import { MessageService } from "../../../services/data-comm";
 
 export default function OrderDetails({ itms }) {
-  let itemCosts = [10.23, 45.41, 67.89, 67.12, 89.57, 23, 45, 6, , 7, 8, 9];
+ // let itemCosts = [10.23, 45.41, 67.89, 67.12, 89.57, 23, 45, 6, , 7, 8, 9];
 
-  let processedItems = itms.map(x => {
-    console.log(x);
-    let c = itemCosts[x.category];
-    x.cost = c * x.quantity;
-    return x;
-  });
+  // let processedItems = itms.map(x => {
+  //   console.log(x);
+  //   let c = itemCosts[x.category];
+  //   x.cost = c * x.quantity;
+  //   return x;
+  // });
 
   const handleOrderCreate = (e)=> {
     e.preventDefault();
+    let totalCost = 0;
+    let orderDetailsvo = [];
+    itms.map(item=>{
+      orderDetailsvo.push(new OrderDetailsVo(item.id,item.quantity,item.name,item.category,item.cost));
+      totalCost = totalCost + item.cost;
+    });
+    let orderId = "Order" + Math.random().toString();
+    let createOrdervo = new CreateOrderVo(orderId,"Super Order",totalCost,orderDetailsvo);
+    
+    MessageService.send("EVT_CREATE_ORDER",createOrdervo);
+
   }
 
   //console.log(props.itms);
@@ -44,10 +58,10 @@ export default function OrderDetails({ itms }) {
         </thead>
         <tbody>
           {
-            processedItems.map(y => {
+            itms.map(y => {
               return (
-                <tr>
-                  <th scope="row">1</th>
+                <tr key={y.id}>
+                  <th scope="row">{y.id}</th>
                   <td>{y.name}</td>
                   <td>{y.quantity}</td>
                   <td>{y.category}</td>
@@ -60,7 +74,7 @@ export default function OrderDetails({ itms }) {
       </table>
       <div class="text-center">
         {
-          <button disabled={!(processedItems.length>0)} type="button" onClick={handleOrderCreate} class="btn btn-primary">Create Order</button>
+          <button disabled={!(itms.length>0)} type="button" onClick={handleOrderCreate} class="btn btn-primary">Create Order</button>
         }
         
       </div>

@@ -32,7 +32,7 @@ public class OrderDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int orderDetailsId;
 
-    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 

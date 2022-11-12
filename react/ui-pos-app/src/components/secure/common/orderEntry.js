@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Item from "../../../model/item";
+import { RandomIntegerBetween } from "../../../services/app-utils";
 import { Categories } from "../../../services/common-model-service";
 import "./orderEntry.css";
 
 export default function OrderEntry(props) {
+  const [idCount, setIdCount] = useState({
+    id:1
+  });
+
   const [formValues, setFormValues] = useState({
     quantity: "",
     product: "",
@@ -38,7 +43,17 @@ export default function OrderEntry(props) {
     if (Object.keys(err).length > 0) {
       return;
     }
-    let item = new Item(0, formValues.product, formValues.quantity, formValues.category);
+    
+    setIdCount((prev)=>{
+      return {
+        ...prev,
+        id:prev.id+1
+      }
+    });
+
+    let cost = RandomIntegerBetween(1,10)*formValues.quantity;
+
+    let item = new Item(idCount.id, formValues.product, formValues.quantity, formValues.category,cost);
     props.onDoAddItem(item);
   };
 

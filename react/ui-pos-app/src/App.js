@@ -9,6 +9,7 @@ import Navbar from "./components/layout/navbar";
 import Dashboard from "./components/secure/dashboard";
 import PageNotFound from "./components/secure/pageNotFound";
 import ProtectedRoute from "./core/protectedRoute";
+import AppDataComm from "./services/app-data-comm-utils";
 
 
 const RouteCfg = () => {
@@ -41,7 +42,7 @@ function App() {
         <Navbar />
         <RouteCfg></RouteCfg>
       </Router>
-
+      <AppDataComm/>
       {/* <Routes> */}
       {/* <Route path="/" element={<Login />}></Route> */}
       {/* <Route path="/landing" element={<Landing />}></Route> */}

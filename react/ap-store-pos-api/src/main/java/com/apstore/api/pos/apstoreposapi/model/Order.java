@@ -28,6 +28,8 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    private String orderRefNo;
+
     private String name;
 
     private double cost;
