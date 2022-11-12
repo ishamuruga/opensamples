@@ -1,0 +1,2 @@
+https://djorg83.github.io/react-bootstrap-sweetalert/
+https://sweetalert.js.org/guides/#installation
