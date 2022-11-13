@@ -20,7 +20,7 @@ const MessageService = {
         return subscriber.asObservable();
     },
     clear : () => {
-        subscriber.next(initValues);
+        subscriber.next({});
     }
 }
 

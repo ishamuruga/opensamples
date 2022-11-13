@@ -20,7 +20,7 @@ public class CreateOrderControllerVHelper {
     
     public CreateOrderResponse createResponsefromOrder(Order order) {
         CreateOrderResponse res = new CreateOrderResponse();
-        res.setId(order.getId());
+        res.setId(order.getOrderRefNo());
         res.setStatus("order created sucessfull on.." + (new java.util.Date()));
 
         return res;

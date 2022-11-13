@@ -13,7 +13,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class CreateOrderResponse {
-    private int id;
+    private String id;
     private String status;
 }
 

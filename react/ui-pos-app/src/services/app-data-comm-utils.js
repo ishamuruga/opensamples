@@ -18,7 +18,9 @@ export default function AppDataComm() {
                 axios.post(Config.url + Config.createorder, JSON.stringify(payload.data), myHeader)
                     .then((res) => {
                         console.log("Response from the server 8080")
-                        MessageService.send("EVT_CREATE_ORDER_200", { res });
+                        console.log(JSON.stringify(res));
+                        //MessageService.clear();
+                        MessageService.send("EVT_CREATE_ORDER_200",res);
                     }).catch(err => {
                         console.log("Error in Order Creation")
                         console.error(err);

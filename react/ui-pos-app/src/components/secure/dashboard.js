@@ -7,7 +7,11 @@ import OrderEntry from './common/orderEntry'
 export default function Dashboard() {
 
   const [items,setItems] = useState([]);
-  const [status,setStatus] = useState(false)
+  const [status,setStatus] = useState({
+    flag:false,
+    id:"",
+    message:""
+  })
 
   const doHandleAddItem = (e) => {
     setItems(prev=>[...prev,e]);
@@ -17,9 +21,15 @@ export default function Dashboard() {
   useEffect(()=>{
     
     MessageService.receive().subscribe(x=>{
-      console.log(x.event);
+      
       if (x.event == "EVT_CREATE_ORDER_200"){
-        setStatus(true);
+        console.log(JSON.stringify(x));
+        setItems([]);
+        setStatus({
+          id:x.data.data.id,
+          message:x.data.data.id + "," + x.data.data.status,
+          flag:true
+        })
         //return <ModelWindow title="MyTitle" message="MyMessage"/>
       }
     });
@@ -35,7 +45,7 @@ export default function Dashboard() {
   return (
     <div>
       {
-        status && <ModelWindow title="Order Status" message="Order Created Sucessfully"/>
+        status.flag && <ModelWindow title="Order Status" message={status.message}/>
       }
       <OrderEntry onDoAddItem={doHandleAddItem}/>
       <OrderDetails itms={items}/> 
