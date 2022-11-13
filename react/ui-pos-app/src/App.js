@@ -10,12 +10,13 @@ import Dashboard from "./components/secure/dashboard";
 import PageNotFound from "./components/secure/pageNotFound";
 import ProtectedRoute from "./core/protectedRoute";
 import AppDataComm from "./services/app-data-comm-utils";
+import ErrorBoundary from "./core/error-boudary";
 
 
 const RouteCfg = () => {
   const data = {
-    id:"super",
-    name:"star"
+    id: "super",
+    name: "star"
   };
 
   let rts = useRoutes([
@@ -40,9 +41,9 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <RouteCfg></RouteCfg>
+          <RouteCfg></RouteCfg>
       </Router>
-      <AppDataComm/>
+      <AppDataComm />
       {/* <Routes> */}
       {/* <Route path="/" element={<Login />}></Route> */}
       {/* <Route path="/landing" element={<Landing />}></Route> */}

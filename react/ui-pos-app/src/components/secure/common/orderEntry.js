@@ -52,7 +52,9 @@ export default function OrderEntry(props) {
     });
 
     let cost = RandomIntegerBetween(1,10)*formValues.quantity;
-
+    if (formValues.quantity>111){
+      throw new Error("value cannot be more than 111");
+    }
     let item = new Item(idCount.id, formValues.product, formValues.quantity, formValues.category,cost);
     props.onDoAddItem(item);
   };
