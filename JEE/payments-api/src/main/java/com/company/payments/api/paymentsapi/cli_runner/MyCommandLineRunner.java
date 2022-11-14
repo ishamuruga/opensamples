@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.lang.model.element.Element;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,23 @@ import com.company.payments.api.paymentsapi.entity.BankAccount;
 import com.company.payments.api.paymentsapi.entity.Customer;
 import com.company.payments.api.paymentsapi.entity.Role;
 import com.company.payments.api.paymentsapi.entity.User;
+import com.company.payments.api.paymentsapi.entity.inh.Book;
+import com.company.payments.api.paymentsapi.entity.inh.ContEmployee;
+import com.company.payments.api.paymentsapi.entity.inh.Elephant;
+import com.company.payments.api.paymentsapi.entity.inh.Lion;
+import com.company.payments.api.paymentsapi.entity.inh.Pen;
+import com.company.payments.api.paymentsapi.entity.inh.PermEmployee;
+import com.company.payments.api.paymentsapi.entity.inh.Tiger;
+import com.company.payments.api.paymentsapi.repo.AnimalRepo;
 import com.company.payments.api.paymentsapi.repo.BankAccountRepo;
 import com.company.payments.api.paymentsapi.repo.BankAccountStatementRepo;
 import com.company.payments.api.paymentsapi.repo.BankAccountTypeRepo;
 import com.company.payments.api.paymentsapi.repo.CustomerRepo;
+import com.company.payments.api.paymentsapi.repo.ProductRepo;
 import com.company.payments.api.paymentsapi.repo.RoleRepo;
 import com.company.payments.api.paymentsapi.service.AccountTypeManager;
 import com.company.payments.api.paymentsapi.service.CustomerManager;
+import com.company.payments.api.paymentsapi.service.EmployeeManager;
 import com.company.payments.api.paymentsapi.service.UserManager;
 
 @Component
@@ -50,6 +61,15 @@ public class MyCommandLineRunner implements CommandLineRunner {
 
     @Autowired
     private BankAccountStatementRepo stmtRepo;
+
+    @Autowired
+    private EmployeeManager empManager;
+
+    @Autowired
+    private AnimalRepo animalRepo;
+
+    @Autowired
+    private ProductRepo prodRepo;
 
 
     @Override
@@ -172,6 +192,77 @@ public class MyCommandLineRunner implements CommandLineRunner {
 
         // BankAccount ba1 = new BankAccount();
         // ba1.setAType(aType2);
+
+        PermEmployee pEmployee = new PermEmployee();
+        pEmployee.setName("Rajinikanth" + + System.currentTimeMillis());
+        pEmployee.setEmpId("1234123" + System.currentTimeMillis());
+        pEmployee.setDob(Calendar.getInstance());
+        pEmployee.setDept("Finance");
+        pEmployee.setBLocation("Chennai");
+
+        ContEmployee cEmp = new ContEmployee();
+        cEmp.setContactId("010101010");
+        cEmp.setContractType("4M");
+        cEmp.setDob(Calendar.getInstance());
+        cEmp.setEmpId("C1212121" + System.currentTimeMillis());
+        cEmp.setName("ManiBasha" + + System.currentTimeMillis());
+
+        //empManager.save(cEmp);
+        //empManager.save(pEmployee);
+        System.out.println("==============================");
+        
+        //empManager.findByName("ManiBasha").forEach(System.out::println);
+        //empManager.fetchAll().forEach(System.out::println);
+
+        Lion ln = new Lion();
+        ln.setIsCarnivorous(true);
+        ln.setKing(true);
+        ln.setLocation("LionKing");
+        ln.setType("AfricanLion");
+
+        Tiger tgr = new Tiger();
+        tgr.setColor("Yellow");
+        tgr.setIsCarnivorous(true);
+        tgr.setType("Bengal");
+
+        Elephant ele = new Elephant();
+        ele.setCountryOfOrgin("India");
+        ele.setIsCarnivorous(false);
+        ele.setType("Asian");
+
+        //animalRepo.save(ln);
+        //animalRepo.save(tgr);
+        //animalRepo.save(ele);
+
+        
+
+        //animalRepo.findAll().forEach(System.out::println);
+
+        Book bk1 = new Book();
+        bk1.setAuthor("User A");
+        bk1.setManuf("McGrawhill");
+        bk1.setNoOfPage(100);
+        
+        //prodRepo.save(bk1);
+
+        for(int i=0;i<100;i++){
+            Pen p= new Pen();
+            p.setInkColor("red");
+            p.setIsGel(false);
+            if (i%2==0) {
+                p.setInkColor("blue");   
+                p.setIsGel(true);
+            }
+            
+            p.setManuf("parker");
+
+            //prodRepo.save(p);
+            
+        }
+
+        System.out.println("=============================");
+
+        System.out.println(prodRepo.findById(2535).get());
     }
 
 }
