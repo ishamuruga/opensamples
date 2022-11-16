@@ -1,6 +1,7 @@
 package com.company.payments.api.paymentsapi.cli_runner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
@@ -262,7 +263,12 @@ public class MyCommandLineRunner implements CommandLineRunner {
 
         System.out.println("=============================");
 
-        System.out.println(prodRepo.findById(2535).get());
+        //System.out.println(prodRepo.findById(2535).get());
+        custService.fetchJoinData().forEach(x->{
+            System.out.println(x.toString());
+        });
+        
+        custService.modifyCust("Red Rose", 13);
     }
 
 }
