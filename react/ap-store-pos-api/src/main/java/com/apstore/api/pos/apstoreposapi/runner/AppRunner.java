@@ -14,8 +14,10 @@ import org.springframework.stereotype.Component;
 
 import com.apstore.api.pos.apstoreposapi.model.Category;
 import com.apstore.api.pos.apstoreposapi.model.EnmRole;
+import com.apstore.api.pos.apstoreposapi.model.Phone;
 import com.apstore.api.pos.apstoreposapi.model.Role;
 import com.apstore.api.pos.apstoreposapi.model.User;
+import com.apstore.api.pos.apstoreposapi.repo.PhoneRepo;
 import com.apstore.api.pos.apstoreposapi.repo.RoleRepository;
 import com.apstore.api.pos.apstoreposapi.repo.UserRepository;
 import com.apstore.api.pos.apstoreposapi.service.CategoryManager;
@@ -35,6 +37,9 @@ public class AppRunner implements CommandLineRunner {
 
     @Autowired
     private CategoryManager cateService;
+
+    @Autowired
+    private PhoneRepo phoneRepo;
 
     @Override
     public void run(String... args) throws Exception {
@@ -118,6 +123,11 @@ public class AppRunner implements CommandLineRunner {
         cateService.save(cate4);
         cateService.save(cate5);
         cateService.save(cate6);
+
+        for(int i=0;i<5;i++){
+            Phone ph = new Phone(i, "phone"+i);
+            phoneRepo.save(ph);
+        }
 
         System.out.println("Completed..........................");
 
