@@ -2,6 +2,9 @@ package com.apstore.api.pos.apstoreposapi.vo;
 
 import java.util.List;
 
+import lombok.ToString;
+
+@ToString
 public class JwtResponse {
   private String token;
   private String type = "Bearer";

@@ -31,5 +31,10 @@ public class PhoneManagerImpl implements PhoneManager {
        phonerepo.save(phone);
         
     }
+
+    @Override
+    public List<Phone> findByName(String name) {
+        return phonerepo.fetchByName(name);
+    }
     
 }
