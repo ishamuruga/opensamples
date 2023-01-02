@@ -1,0 +1,13 @@
+https://faucet.rinkeby.io/
+
+https://github.com/crytic/evm-opcodes
+
+Gas Price --> Gas price per unit (Cost per Literes)
+
+Gas Limit --> Gas Unit (ex literes)
+
+14 Gas * 300wei per gas-unit  = 4200 Wei
+
+BIP39 mnemonic algorithm
+
+https://iancoleman.io/bip39/

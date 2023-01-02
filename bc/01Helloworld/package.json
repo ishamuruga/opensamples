@@ -1,0 +1,17 @@
+{
+  "name": "01helloworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compile.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ganache": "^7.6.0",
+    "ganache-cli": "^6.12.2",
+    "mocha": "^10.2.0",
+    "web3": "^1.8.1"
+  }
+}
