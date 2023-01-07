@@ -4,14 +4,16 @@
   "description": "",
   "main": "compile.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --timeout 10000"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.4",
     "ganache": "^7.6.0",
     "ganache-cli": "^6.12.2",
     "mocha": "^10.2.0",
+    "solc": "^0.8.6",
     "web3": "^1.8.1"
   }
 }

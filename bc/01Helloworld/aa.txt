@@ -1,0 +1,5 @@
+
+> 01helloworld@1.0.0 test
+> mocha --timeout 10000
+
+Terminate batch job (Y/N)? 
