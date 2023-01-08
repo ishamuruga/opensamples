@@ -1,0 +1,14 @@
+C:\Users\raj\Documents\work\opensamples\bc\Lotteryv01>truffle init
+
+Starting init...
+================
+
+> Copying project files to C:\Users\raj\Documents\work\opensamples\bc\Lotteryv01
+
+Init successful, sweet!
+
+Try our scaffold commands to get started:
+  $ truffle create contract YourContractName # scaffold a contract
+  $ truffle create test YourTestName         # scaffold a test
+
+http://trufflesuite.com/docs
