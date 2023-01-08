@@ -4,6 +4,7 @@ pragma solidity ^0.8.17;
 contract Lottery {
 
     address public manager;
+    address[] public players;
 
     uint[] public ages;
 
@@ -12,6 +13,10 @@ contract Lottery {
       ages.push(22);
       ages.push(33);
       manager = msg.sender;  
+    }
+
+    function enter() public payable {
+      players.push(msg.sender);
     }
 
     function getAgesElements(uint id) public view returns(uint) {
