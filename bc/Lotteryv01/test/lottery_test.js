@@ -7,13 +7,18 @@ const LotteryTest = artifacts.require("Lottery");
  */
 contract("LotteryTest", function (/* accounts */) {
   it("should assert true", async function () {
+    console.log("===1");
     await LotteryTest.deployed();
+    console.log("===2");
     return assert.isTrue(true);
   });
 
-  it("check baance", async function (accounts) {
-    const lt = await LotteryTest.deployed();
-    console.log(lt);
+  it("call contract", async function (accounts) {
+    const lt = await LotteryTest.deployed(); 
+    const x = await lt.manager.call();
+    
+    const val = await lt.getAgesElements(0);
+    console.log("vaal.." + val);
     return assert.isTrue(true);
   });
 });
