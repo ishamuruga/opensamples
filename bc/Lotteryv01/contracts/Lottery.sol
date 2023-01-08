@@ -17,4 +17,12 @@ contract Lottery {
     function getAgesElements(uint id) public view returns(uint) {
       return ages[id];
     }
+
+    function getBalance() public view returns(uint256) {
+      return address(this).balance;
+    }
+
+    function sendMoney() public payable {
+      ages.push(msg.value);
+    }
 }
