@@ -22,10 +22,13 @@ contract("LotteryTest", function (accounts) {
     const bal = await lt.getBalance();
     console.log("baal.." + bal);
     console.log("acct.." + accounts[0]);
-    await lt.sendMoney({from:accounts[0],value:13})
+    await lt.sendMoney({from:accounts[0],value:1})
 
     const bal2 = await lt.getBalance();
     console.log("baal2.." + bal2);
+    console.log("Enter call");
+    await lt.enter({from:accounts[0],value:1})
+
 
     return assert.isTrue(true);
   });

@@ -16,6 +16,7 @@ contract Lottery {
     }
 
     function enter() public payable {
+      require(msg.value>0.01 ether,"InSufficient Value");
       players.push(msg.sender);
     }
 
