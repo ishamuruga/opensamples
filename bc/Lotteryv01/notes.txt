@@ -12,3 +12,6 @@ Try our scaffold commands to get started:
   $ truffle create test YourTestName         # scaffold a test
 
 http://trufflesuite.com/docs
+
+
+https://ethereum.stackexchange.com/questions/113716/send-and-transfer-are-only-available-for-objects-of-type-address-payable

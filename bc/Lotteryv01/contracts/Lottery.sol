@@ -31,4 +31,24 @@ contract Lottery {
     function sendMoney() public payable {
       ages.push(msg.value);
     }
+
+    function random() private view returns (uint) {
+      return uint(keccak256(abi.encodePacked(block.difficulty,block.timestamp,players)));
+    }
+
+    function pickWinner() public onlyManager {
+      //require(msg.sender == manager,"Not a Manager Role");
+      uint index = random() % players.length;
+      payable(players[index]).transfer(address(this).balance);
+      players = new address[](0);
+    }
+
+    modifier onlyManager() {
+      require(msg.sender == manager,"Not a Manager Role");
+      _;
+    }
+
+    function getPlayers() public view returns(address[] memory){
+      return players;
+    }
 }

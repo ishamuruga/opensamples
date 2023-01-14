@@ -27,8 +27,17 @@ contract("LotteryTest", function (accounts) {
     const bal2 = await lt.getBalance();
     console.log("baal2.." + bal2);
     console.log("Enter call");
-    await lt.enter({from:accounts[0],value:1})
+    await lt.enter({from:accounts[0],value:100000000000000000})
 
+
+    return assert.isTrue(true);
+  });
+
+  it("random",async ()=>{
+    const lt = await LotteryTest.deployed(); 
+    // const rnd = await lt.random();
+    // console.log("#$#$#");
+    // console.log(rnd);
 
     return assert.isTrue(true);
   });
