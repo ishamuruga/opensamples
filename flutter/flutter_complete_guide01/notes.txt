@@ -1,0 +1,29 @@
+flutter emulators
+flutter emulators --launch Nexus_6P_API_30
+
+sample code
+==========
+double addNumbers(int x, double y) {
+  print(x + y);
+  return x + y;
+}
+
+void main() {
+  String name = "raj";
+  int age = 30;
+  double firstResult = addNumbers(5, 6);
+  var secondResult = addNumbers(5, 6);
+  var p1 = Person();
+  print('hello- ${3 + 2} - ${firstResult}');
+}
+
+class Person {
+  String name = "raj";
+  int age = 30;
+
+  Person({String name,int age}){
+
+  }
+
+  Person({this.name,this.age});
+}
