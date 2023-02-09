@@ -5,25 +5,133 @@ abstract AutoMobile {
     
 }
 
+class Manufacturer
+
 AutoMobile <|-- PassengerVehicle
 AutoMobile <|-- CommercialVehicle
 
-class Exterior {
-    String color
-    boolean isMetalCoation
+class PassengerVehicle {
+
 }
 
-class Doors {
-    int noOfDoors
+class Celerio extends PassengerVehicle {
+
 }
+
+class Baleno extends PassengerVehicle {
+
+}
+
+class Swift extends PassengerVehicle {
+
+}
+
+class MarutiMiniVan extends CommercialVehicle {
+
+}
+
+class MarutiShareAuto extends CommercialVehicle {
+
+}
+
+
+
+class CommercialVehicle {
+    int loadCapacity
+}
+
+
+class Model {
+    String name
+    Date yearOfManufacturer
+}
+
+abstract class Exterior {
+    String color
+    boolean isMetalCoating
+}
+
+class Sensors extends Exterior {}
+
+class ExtAccessories {
+    int id
+    boolean isOem
+
+}
+class ExtAccessoriesType {
+
+}
+
+ExtAccessoriesType --* ExtAccessories
+Exterior --> ExtAccessories
+Exterior --> Manufacturer
+class RadioAntenna extends Sensors {}
+
+class RainSensors extends Sensors {}
+
+class Doors extends Exterior {
+    int noOfDoors
+    boolean isPowerWindows
+    boolean doorAcces(boolean isOpen)
+    void doorSlide(int value)
+}
+
+class LockType {
+    int id
+    String description
+}
+
+LockType --* Doors
 
 class FrontDoor extends Doors {
-    String lockPush
+    String lockType
 }
 
 class RearDoor extends Doors {
+    boolean isChildSafetyLock
 
 }
 
+class BootDoor extends Doors {
+    String lockType
+}
 
+class Tyre {
+    int sizeCode
+    int pressure
+    String groveType
+}
+PassengerVehicle "1" --> "5" Tyre :contains
+CommercialVehicle "1" --> "many" Tyre :contains
+class TyreType {
+    int id
+    boolean isTubeLess
+    boolean isRadial
+    String tyreCode
+    
+}
+Tyre *-- TyreType
+class Parts {}
+class UserExposedParts extends Parts {}
+class InternalParts extends Parts {}
+abstract class Engine {
+
+}
+class FossileFuelEngine extends Engine {
+
+}
+
+class RenewableFuelEngine extends Engine {
+
+}
+
+class PetrolEngine extends FossileFuelEngine {}
+class DieselEngine extends FossileFuelEngine {}
+class CNGEngine extends FossileFuelEngine {}
+class ElectricEngine extends RenewableFuelEngine {}
+class HydrogenEngine extends RenewableFuelEngine
+
+
+InternalParts "1" --> "1" Engine
+AutoMobile "1" --> "many" Parts :contains
 @enduml
