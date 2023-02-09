@@ -1,0 +1,29 @@
+@startuml
+
+abstract AutoMobile {
+    String vinNumber
+    
+}
+
+AutoMobile <|-- PassengerVehicle
+AutoMobile <|-- CommercialVehicle
+
+class Exterior {
+    String color
+    boolean isMetalCoation
+}
+
+class Doors {
+    int noOfDoors
+}
+
+class FrontDoor extends Doors {
+    String lockPush
+}
+
+class RearDoor extends Doors {
+
+}
+
+
+@enduml
