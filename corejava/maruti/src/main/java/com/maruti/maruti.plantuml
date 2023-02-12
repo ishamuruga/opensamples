@@ -7,6 +7,7 @@ abstract AutoMobile {
 
 class Manufacturer
 
+
 AutoMobile <|-- PassengerVehicle
 AutoMobile <|-- CommercialVehicle
 
