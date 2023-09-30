@@ -1,0 +1,42 @@
+{
+  "books": [
+    {
+      "id": 0.24627755522289574,
+      "title": "Super Star",
+      "author": "Basha",
+      "image": "https://m.media-amazon.com/images/I/81yeN1VwEkL._SY466_.jpg"
+    },
+    {
+      "id": 0.3315602484756892,
+      "title": "Super Star",
+      "author": "Basha",
+      "image": "https://m.media-amazon.com/images/I/81yeN1VwEkL._SY466_.jpg"
+    }
+  ],
+  "booksbk": [
+    {
+      "id": 2,
+      "title": "json-server2",
+      "author": "typicode2",
+      "image": "https://m.media-amazon.com/images/I/51ewXeUdkvL._SY445_SX342_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "json-server3",
+      "author": "typicode3",
+      "image": "https://m.media-amazon.com/images/I/51O7+SsEz2L.jpg"
+    },
+    {
+      "id": 0.06796309654745203,
+      "title": "Super Star",
+      "author": "Basha",
+      "image": "https://m.media-amazon.com/images/I/81yeN1VwEkL._SY466_.jpg"
+    },
+    {
+      "id": 0.30608940998124834,
+      "title": "Super Star",
+      "author": "Basha",
+      "image": "https://m.media-amazon.com/images/I/81yeN1VwEkL._SY466_.jpg"
+    }
+  ]
+} 
