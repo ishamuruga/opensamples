@@ -16,8 +16,9 @@ import Booklist from './component/booklist';
 function App() {
   return (
     <>
+    <div>My Portal Page</div>
       <Navbar />
-      <Suspense fallback={<div className="container">Loading...</div>}>
+      {/* <Suspense fallback={<div className="container">Loading...</div>}> */}
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/home' element={<Home />} />
@@ -46,7 +47,7 @@ function App() {
 
           <Route path="*" element={<Pagenotfound />} />
         </Routes>
-      </Suspense>
+      {/* </Suspense> */}
     </>
   );
 }
