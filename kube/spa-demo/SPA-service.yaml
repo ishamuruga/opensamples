@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service-label-key: service-label-value 
+  name: service-name
+spec:
+  type: ClusterIP
+  ports:
+  - name: service-port-name
+    port: 80
+    protocol: TCP
+  selector:
+    deployment-label-key: deployment-label-value

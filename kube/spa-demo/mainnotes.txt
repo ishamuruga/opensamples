@@ -1,0 +1,31 @@
+docker login
+
+sudo docker build . -t pokran75/my-angular-app
+
+sudo docker push pokran75/my-angular-app
+
+kubectl apply -f spa-pod-01.yaml
+
+kubectl apply -f spa-replicaset-02.yaml
+
+//after changing replica set to 6
+kubectl replace -f spa-replicaset-02.yaml
+
+//or
+kubectl scale --replicas=6 -f spa-replicaset-02.yaml
+
+//or
+kubectl edit replicaset frontend
+
+kubectl describe replicaset frontend
+
+
+kubectl apply -f spa-deployment-03.yaml
+
+kubectl get all
+
+
+==
+kubectl describe pod my-app-portal
+kubectl delete pod my-app-portal
+kubectl run redis123 --image=redis --dry-run=client -o yaml

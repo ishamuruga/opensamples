@@ -1,0 +1,68 @@
+https://blog.mayadata.io/openebs/steps-to-deploy-angular-application-on-kubernetes
+
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+
+sudo docker rmi $(sudo docker images -q)
+
+sudo docker rm $(sudo docker ps -aq) --force
+
+kubectl apply -f spa-deployment.yaml
+
+
+https://uklabs.kodekloud.com/courses/labs-kubernetes-for-the-absolute-beginners-hands-on/
+
+Apply the coupon code kk-labs-k8b-lakjg328321095305
+
+kubectl run nginx --image nginx
+
+kubectl get pods
+
+minikube start
+
+https://kubernetes.io/docs/tutorials/hello-minikube/
+
+
+kubectl create deployment hello-node --image=registry.k8s.io/e2e-test-images/agnhost:2.39 -- /agnhost netexec --http-port=8080
+
+kubectl get deployments
+kubectl get pods
+kubectl config view
+
+kubectl get events
+
+kubectl logs hello-node-5f76cf6ccf-br9b5
+
+
+kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+
+
+kubectl get services
+
+minikube service hello-node
+
+minikube addons enable metrics-server
+
+kubectl get pod,svc -n kube-system
+
+kubectl top pods
+
+cleanup
+========
+kubectl delete service hello-node
+kubectl delete deployment hello-node
+
+minikube stop
+minikube delete
+
+
+=================================================
+
+
+kubectl run nginx --image=nginx
+kubectl describe pod nginx
+
+kubectl get pods -o wide
+
+
+minikube start --nodes 2 -p multinode-demo
+

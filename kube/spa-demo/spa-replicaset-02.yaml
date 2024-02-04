@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      name: my-app-portal
+      labels:
+        tier: frontend
+        a1: superstar
+        b2: jailer
+        c3: padaiyappa
+        app: ecom-portal
+        mode: development
+        version: 0.0.1-snapshot
+    spec:
+      containers:
+        - name: my-app-portal
+          image: pokran75/my-angular-app
+          ports: 
+          - containerPort: 9090
