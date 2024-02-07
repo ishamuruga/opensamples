@@ -7,7 +7,7 @@ metadata:
     tier: frontend
 spec:
   # modify replicas according to your case
-  replicas: 3
+  replicas: 6
   selector:
     matchLabels:
       tier: frontend
@@ -25,6 +25,6 @@ spec:
     spec:
       containers:
         - name: my-app-portal
-          image: pokran75/my-angular-app
+          image: pokran75/my-angular-app:1.0
           ports: 
-          - containerPort: 9090
+          - containerPort: 80
