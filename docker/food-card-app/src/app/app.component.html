@@ -1,0 +1,9 @@
+<div>
+
+  <h1>Card Application</h1>
+  <div *ngFor="let c of cards">
+    {{c.id}} = {{c.card}} = {{c.dob}}
+  </div>
+
+  <button (click)="save()">Add Card</button>
+</div>
