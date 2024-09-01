@@ -1,0 +1,42 @@
+Reference:-
+------------
+https://benstitou-anas.medium.com/deploy-java-spring-application-with-mysql-db-on-kubernetes-1e456271c6a1
+
+
+docker build -t pokran75/food-card-api .
+docker push pokran75/food-card-api
+
+minikube delete
+minikube start
+
+kubectl apply -f mysql-configmap-01x.yaml
+kubectl apply -f secrets-02x.yaml
+kubectl apply -f mysql-pv-03x.yaml
+kubectl apply -f mysql-pvc-04x.yaml
+kubectl apply -f mysql-deployment-05x.yaml
+kubectl apply -f mysql-service-06x.yaml
+kubectl apply -f spring-app-deployment-07x.yaml
+kubectl apply -f spring-app-service-08x.yaml
+
+
+minikube service food-card-api-service --url
+
+
+
+
+
+
+
+
+debug
+=====
+kubectl describe pod food-card-api-mysql-deployment-5c69b5fb97-hlhq6
+kubectl get secrets
+minikube service abichart-mysql-service --url
+kubectl describe services my-service
+
+
+
+
+https://kubernetes.io/docs/tasks/access-application-cluster/connecting-frontend-backend/
+https://www.geeksforgeeks.org/how-to-deploy-angular-app-in-kubernetes/
