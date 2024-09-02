@@ -2,15 +2,28 @@ apiVersion: v1
 kind: Service
 metadata:
   name: food-card-api-service
-  labels:
-    app: food-card-api-service
 spec:
-  type: LoadBalancer
   selector:
-    app: food-card-api
-  type: NodePort
+    app: food-card-api-service
+    tier: backend
   ports:
-      - protocol: TCP
-        port: 8080
-        targetPort: 8080
+  - protocol: TCP
+    port: 80
+    targetPort: http
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: food-card-api-service
+#   labels:
+#     app: food-card-api-service
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     app: food-card-api
+#   type: NodePort
+#   ports:
+#       - protocol: TCP
+#         port: 8080
+#         targetPort: 8080
   

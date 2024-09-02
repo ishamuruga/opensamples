@@ -3,7 +3,7 @@ const AppConstants = {
     PREFIX:"api",
     COLON:":",
     SLASH:"/",
-    PORT:"8080",
+    PORT:"8001",
     FETCHALL:"api/all",
     SAVE:"api/save",
 }
