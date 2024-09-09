@@ -9,7 +9,7 @@ from langchain_community.chat_models import ChatOpenAI
 # https://platform.openai.com/api-keys
 
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "Secrets"
  
 
 #Upload PDF Files
