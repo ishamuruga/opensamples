@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: food-card-api-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: food-card-api
