@@ -3,14 +3,16 @@ kind: Deployment
 metadata:
   name: food-card-api-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: food-card-api
+      tier: backend
   template:
     metadata:
       labels:
         app: food-card-api
+        tier: backend
     spec:
       containers:
           - name: food-card-api-container
