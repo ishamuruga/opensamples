@@ -1,0 +1,7 @@
+Create a Patient JPA entity class with first name, last name , age as integer, country as enum, city as enum, and adhaar card number as its attributes
+
+create a ClinicalData JPA Class for the given Patient, with component name as enum, component value as string, measture date and time as timestamp. Employ lombok to generate getters and setters
+
+patient rest controller that uses the patient repository and exposes rest api to perform crud operations
+ClinicalData rest controller that uses the Clinical repository and exposes rest api to perform crud operations
+Physician rest controller that uses the Physician repository and exposes rest api to perform crud operations

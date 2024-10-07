@@ -1,0 +1,323 @@
+insert into physician values(1, "Dr Harsha Rajkumar","2024-01-01","OnCo");
+insert into physician values(2, "Dr Abirami Susithra","2024-02-01","Gynachologist");
+insert into physician values(3, "Dr Vettaiyan","2024-01-01","Ortho");
+
+insert into patient values(1,781,19,"DELHI","AUSTRALIA","Raj","kumar",1);
+insert into patient values(2,500,42,"CHENNAI","USA","Raj","kumar",2);
+insert into patient values(3,522,49,"LONDON","UK","Raj","kumar",3);
+insert into patient values(4,680,62,"SYDNEY","CANADA","Raj","kumar",1);
+insert into patient values(5,379,65,"NEW_YORK","SINGAPORE","Raj","kumar",2);
+insert into patient values(6,353,15,"DELHI","AUSTRALIA","Raj","kumar",3);
+insert into patient values(7,407,53,"CHENNAI","USA","Raj","kumar",1);
+insert into patient values(8,209,78,"LONDON","UK","Raj","kumar",2);
+insert into patient values(9,710,87,"SYDNEY","CANADA","Raj","kumar",3);
+insert into patient values(10,714,21,"NEW_YORK","SINGAPORE","Raj","kumar",1);
+insert into patient values(11,808,14,"DELHI","AUSTRALIA","Raj","kumar",2);
+insert into patient values(12,281,3,"CHENNAI","USA","Raj","kumar",3);
+insert into patient values(13,460,25,"LONDON","UK","Raj","kumar",1);
+insert into patient values(14,390,78,"SYDNEY","CANADA","Raj","kumar",2);
+insert into patient values(15,546,39,"NEW_YORK","SINGAPORE","Raj","kumar",3);
+insert into patient values(16,378,67,"DELHI","AUSTRALIA","Raj","kumar",1);
+insert into patient values(17,151,55,"CHENNAI","USA","Raj","kumar",2);
+insert into patient values(18,471,32,"LONDON","UK","Raj","kumar",3);
+insert into patient values(19,288,31,"SYDNEY","CANADA","Raj","kumar",1);
+insert into patient values(20,654,67,"NEW_YORK","SINGAPORE","Raj","kumar",2);
+insert into patient values(21,791,16,"DELHI","AUSTRALIA","Raj","kumar",3);
+insert into patient values(22,497,57,"CHENNAI","USA","Raj","kumar",1);
+insert into patient values(23,704,25,"LONDON","UK","Raj","kumar",2);
+insert into patient values(24,876,73,"SYDNEY","CANADA","Raj","kumar",3);
+insert into patient values(25,34,34,"NEW_YORK","SINGAPORE","Raj","kumar",1);
+insert into patient values(26,455,38,"DELHI","AUSTRALIA","Raj","kumar",2);
+insert into patient values(27,554,88,"CHENNAI","USA","Raj","kumar",3);
+insert into patient values(28,697,16,"LONDON","UK","Raj","kumar",1);
+insert into patient values(29,57,29,"SYDNEY","CANADA","Raj","kumar",2);
+insert into patient values(30,485,18,"NEW_YORK","SINGAPORE","Raj","kumar",3);
+insert into patient values(31,857,79,"DELHI","AUSTRALIA","Raj","kumar",1);
+insert into patient values(32,850,67,"CHENNAI","USA","Raj","kumar",2);
+insert into patient values(33,561,66,"LONDON","UK","Raj","kumar",3);
+insert into patient values(34,981,90,"SYDNEY","CANADA","Raj","kumar",1);
+insert into patient values(35,701,90,"NEW_YORK","SINGAPORE","Raj","kumar",2);
+insert into patient values(36,308,86,"DELHI","AUSTRALIA","Raj","kumar",3);
+insert into patient values(37,295,33,"CHENNAI","USA","Raj","kumar",1);
+insert into patient values(38,632,54,"LONDON","UK","Raj","kumar",2);
+insert into patient values(39,920,84,"SYDNEY","CANADA","Raj","kumar",3);
+insert into patient values(40,752,91,"NEW_YORK","SINGAPORE","Raj","kumar",1);
+insert into patient values(41,931,97,"DELHI","AUSTRALIA","Raj","kumar",2);
+insert into patient values(42,977,5,"CHENNAI","USA","Raj","kumar",3);
+insert into patient values(43,767,78,"LONDON","UK","Raj","kumar",1);
+insert into patient values(44,700,52,"SYDNEY","CANADA","Raj","kumar",2);
+insert into patient values(45,723,85,"NEW_YORK","SINGAPORE","Raj","kumar",3);
+insert into patient values(46,99,92,"DELHI","AUSTRALIA","Raj","kumar",1);
+insert into patient values(47,528,80,"CHENNAI","USA","Raj","kumar",2);
+insert into patient values(48,469,61,"LONDON","UK","Raj","kumar",3);
+insert into patient values(49,57,76,"SYDNEY","CANADA","Raj","kumar",1);
+insert into patient values(50,941,28,"NEW_YORK","SINGAPORE","Raj","kumar",2);
+
+insert into clinical_data values(1,"BLOOD_PRESSURE",1,"02-02-2023","02-02-2023",1);
+insert into clinical_data values(2,"HEART_RATE",27,"03-02-2023","03-02-2023",2);
+insert into clinical_data values(3,"OXYGEN_SATURATION",81,"04-02-2023","04-02-2023",3);
+insert into clinical_data values(4,"RESPIRATORY_RATE",47,"05-02-2023","05-02-2023",4);
+insert into clinical_data values(5,"TEMPERATURE",36,"06-02-2023","06-02-2023",5);
+insert into clinical_data values(6,"BLOOD_PRESSURE",26,"07-02-2023","07-02-2023",6);
+insert into clinical_data values(7,"HEART_RATE",11,"08-02-2023","08-02-2023",7);
+insert into clinical_data values(8,"OXYGEN_SATURATION",40,"09-02-2023","09-02-2023",8);
+insert into clinical_data values(9,"RESPIRATORY_RATE",16,"10-02-2023","10-02-2023",9);
+insert into clinical_data values(10,"TEMPERATURE",42,"11-02-2023","11-02-2023",10);
+insert into clinical_data values(11,"BLOOD_PRESSURE",72,"12-02-2023","12-02-2023",11);
+insert into clinical_data values(12,"HEART_RATE",93,"13-02-2023","13-02-2023",12);
+insert into clinical_data values(13,"OXYGEN_SATURATION",6,"14-02-2023","14-02-2023",13);
+insert into clinical_data values(14,"RESPIRATORY_RATE",60,"15-02-2023","15-02-2023",14);
+insert into clinical_data values(15,"TEMPERATURE",63,"16-02-2023","16-02-2023",15);
+insert into clinical_data values(16,"BLOOD_PRESSURE",32,"17-02-2023","17-02-2023",16);
+insert into clinical_data values(17,"HEART_RATE",85,"18-02-2023","18-02-2023",17);
+insert into clinical_data values(18,"OXYGEN_SATURATION",72,"19-02-2023","19-02-2023",18);
+insert into clinical_data values(19,"RESPIRATORY_RATE",55,"20-02-2023","20-02-2023",19);
+insert into clinical_data values(20,"TEMPERATURE",39,"21-02-2023","21-02-2023",20);
+insert into clinical_data values(21,"BLOOD_PRESSURE",66,"22-02-2023","22-02-2023",21);
+insert into clinical_data values(22,"HEART_RATE",97,"23-02-2023","23-02-2023",22);
+insert into clinical_data values(23,"OXYGEN_SATURATION",72,"24-02-2023","24-02-2023",23);
+insert into clinical_data values(24,"RESPIRATORY_RATE",62,"25-02-2023","25-02-2023",24);
+insert into clinical_data values(25,"TEMPERATURE",46,"26-02-2023","26-02-2023",25);
+insert into clinical_data values(26,"BLOOD_PRESSURE",36,"27-02-2023","27-02-2023",26);
+insert into clinical_data values(27,"HEART_RATE",40,"28-02-2023","28-02-2023",27);
+insert into clinical_data values(28,"OXYGEN_SATURATION",40,"01-03-2023","01-03-2023",28);
+insert into clinical_data values(29,"RESPIRATORY_RATE",14,"02-03-2023","02-03-2023",29);
+insert into clinical_data values(30,"TEMPERATURE",46,"03-03-2023","03-03-2023",30);
+insert into clinical_data values(31,"BLOOD_PRESSURE",78,"04-03-2023","04-03-2023",31);
+insert into clinical_data values(32,"HEART_RATE",88,"05-03-2023","05-03-2023",32);
+insert into clinical_data values(33,"OXYGEN_SATURATION",6,"06-03-2023","06-03-2023",33);
+insert into clinical_data values(34,"RESPIRATORY_RATE",88,"07-03-2023","07-03-2023",34);
+insert into clinical_data values(35,"TEMPERATURE",67,"08-03-2023","08-03-2023",35);
+insert into clinical_data values(36,"BLOOD_PRESSURE",72,"09-03-2023","09-03-2023",36);
+insert into clinical_data values(37,"HEART_RATE",16,"10-03-2023","10-03-2023",37);
+insert into clinical_data values(38,"OXYGEN_SATURATION",43,"11-03-2023","11-03-2023",38);
+insert into clinical_data values(39,"RESPIRATORY_RATE",54,"12-03-2023","12-03-2023",39);
+insert into clinical_data values(40,"TEMPERATURE",42,"13-03-2023","13-03-2023",40);
+insert into clinical_data values(41,"BLOOD_PRESSURE",29,"14-03-2023","14-03-2023",41);
+insert into clinical_data values(42,"HEART_RATE",38,"15-03-2023","15-03-2023",42);
+insert into clinical_data values(43,"OXYGEN_SATURATION",22,"16-03-2023","16-03-2023",43);
+insert into clinical_data values(44,"RESPIRATORY_RATE",28,"17-03-2023","17-03-2023",44);
+insert into clinical_data values(45,"TEMPERATURE",42,"18-03-2023","18-03-2023",45);
+insert into clinical_data values(46,"BLOOD_PRESSURE",91,"19-03-2023","19-03-2023",46);
+insert into clinical_data values(47,"HEART_RATE",49,"20-03-2023","20-03-2023",47);
+insert into clinical_data values(48,"OXYGEN_SATURATION",44,"21-03-2023","21-03-2023",48);
+insert into clinical_data values(49,"RESPIRATORY_RATE",8,"22-03-2023","22-03-2023",50);
+insert into clinical_data values(50,"TEMPERATURE",68,"23-03-2023","23-03-2023",1);
+insert into clinical_data values(51,"BLOOD_PRESSURE",51,"24-03-2023","24-03-2023",2);
+insert into clinical_data values(52,"HEART_RATE",62,"25-03-2023","25-03-2023",3);
+insert into clinical_data values(53,"OXYGEN_SATURATION",89,"26-03-2023","26-03-2023",4);
+insert into clinical_data values(54,"RESPIRATORY_RATE",87,"27-03-2023","27-03-2023",5);
+insert into clinical_data values(55,"TEMPERATURE",4,"28-03-2023","28-03-2023",6);
+insert into clinical_data values(56,"BLOOD_PRESSURE",78,"29-03-2023","29-03-2023",7);
+insert into clinical_data values(57,"HEART_RATE",84,"30-03-2023","30-03-2023",8);
+insert into clinical_data values(58,"OXYGEN_SATURATION",87,"31-03-2023","31-03-2023",9);
+insert into clinical_data values(59,"RESPIRATORY_RATE",74,"01-04-2023","01-04-2023",10);
+insert into clinical_data values(60,"TEMPERATURE",76,"02-04-2023","02-04-2023",11);
+insert into clinical_data values(61,"BLOOD_PRESSURE",87,"03-04-2023","03-04-2023",12);
+insert into clinical_data values(62,"HEART_RATE",45,"04-04-2023","04-04-2023",13);
+insert into clinical_data values(63,"OXYGEN_SATURATION",43,"05-04-2023","05-04-2023",14);
+insert into clinical_data values(64,"RESPIRATORY_RATE",62,"06-04-2023","06-04-2023",15);
+insert into clinical_data values(65,"TEMPERATURE",61,"07-04-2023","07-04-2023",16);
+insert into clinical_data values(66,"BLOOD_PRESSURE",3,"08-04-2023","08-04-2023",17);
+insert into clinical_data values(67,"HEART_RATE",4,"09-04-2023","09-04-2023",18);
+insert into clinical_data values(68,"OXYGEN_SATURATION",3,"10-04-2023","10-04-2023",19);
+insert into clinical_data values(69,"RESPIRATORY_RATE",44,"11-04-2023","11-04-2023",20);
+insert into clinical_data values(70,"TEMPERATURE",11,"12-04-2023","12-04-2023",21);
+insert into clinical_data values(71,"BLOOD_PRESSURE",59,"13-04-2023","13-04-2023",22);
+insert into clinical_data values(72,"HEART_RATE",11,"14-04-2023","14-04-2023",23);
+insert into clinical_data values(73,"OXYGEN_SATURATION",89,"15-04-2023","15-04-2023",24);
+insert into clinical_data values(74,"RESPIRATORY_RATE",52,"16-04-2023","16-04-2023",25);
+insert into clinical_data values(75,"TEMPERATURE",82,"17-04-2023","17-04-2023",26);
+insert into clinical_data values(76,"BLOOD_PRESSURE",97,"18-04-2023","18-04-2023",27);
+insert into clinical_data values(77,"HEART_RATE",99,"19-04-2023","19-04-2023",28);
+insert into clinical_data values(78,"OXYGEN_SATURATION",15,"20-04-2023","20-04-2023",29);
+insert into clinical_data values(79,"RESPIRATORY_RATE",11,"21-04-2023","21-04-2023",30);
+insert into clinical_data values(80,"TEMPERATURE",62,"22-04-2023","22-04-2023",31);
+insert into clinical_data values(81,"BLOOD_PRESSURE",78,"23-04-2023","23-04-2023",32);
+insert into clinical_data values(82,"HEART_RATE",31,"24-04-2023","24-04-2023",33);
+insert into clinical_data values(83,"OXYGEN_SATURATION",99,"25-04-2023","25-04-2023",34);
+insert into clinical_data values(84,"RESPIRATORY_RATE",36,"26-04-2023","26-04-2023",35);
+insert into clinical_data values(85,"TEMPERATURE",100,"27-04-2023","27-04-2023",36);
+insert into clinical_data values(86,"BLOOD_PRESSURE",66,"28-04-2023","28-04-2023",37);
+insert into clinical_data values(87,"HEART_RATE",72,"29-04-2023","29-04-2023",38);
+insert into clinical_data values(88,"OXYGEN_SATURATION",37,"30-04-2023","30-04-2023",39);
+insert into clinical_data values(89,"RESPIRATORY_RATE",3,"01-05-2023","01-05-2023",40);
+insert into clinical_data values(90,"TEMPERATURE",49,"02-05-2023","02-05-2023",41);
+insert into clinical_data values(91,"BLOOD_PRESSURE",30,"03-05-2023","03-05-2023",42);
+insert into clinical_data values(92,"HEART_RATE",64,"04-05-2023","04-05-2023",43);
+insert into clinical_data values(93,"OXYGEN_SATURATION",38,"05-05-2023","05-05-2023",44);
+insert into clinical_data values(94,"RESPIRATORY_RATE",53,"06-05-2023","06-05-2023",45);
+insert into clinical_data values(95,"TEMPERATURE",4,"07-05-2023","07-05-2023",46);
+insert into clinical_data values(96,"BLOOD_PRESSURE",37,"08-05-2023","08-05-2023",47);
+insert into clinical_data values(97,"HEART_RATE",75,"09-05-2023","09-05-2023",48);
+insert into clinical_data values(98,"OXYGEN_SATURATION",25,"10-05-2023","10-05-2023",50);
+insert into clinical_data values(99,"RESPIRATORY_RATE",92,"11-05-2023","11-05-2023",1);
+insert into clinical_data values(100,"TEMPERATURE",89,"12-05-2023","12-05-2023",2);
+insert into clinical_data values(101,"BLOOD_PRESSURE",4,"13-05-2023","13-05-2023",3);
+insert into clinical_data values(102,"HEART_RATE",63,"14-05-2023","14-05-2023",4);
+insert into clinical_data values(103,"OXYGEN_SATURATION",12,"15-05-2023","15-05-2023",5);
+insert into clinical_data values(104,"RESPIRATORY_RATE",92,"16-05-2023","16-05-2023",6);
+insert into clinical_data values(105,"TEMPERATURE",20,"17-05-2023","17-05-2023",7);
+insert into clinical_data values(106,"BLOOD_PRESSURE",84,"18-05-2023","18-05-2023",8);
+insert into clinical_data values(107,"HEART_RATE",20,"19-05-2023","19-05-2023",9);
+insert into clinical_data values(108,"OXYGEN_SATURATION",70,"20-05-2023","20-05-2023",10);
+insert into clinical_data values(109,"RESPIRATORY_RATE",95,"21-05-2023","21-05-2023",11);
+insert into clinical_data values(110,"TEMPERATURE",69,"22-05-2023","22-05-2023",12);
+insert into clinical_data values(111,"BLOOD_PRESSURE",60,"23-05-2023","23-05-2023",13);
+insert into clinical_data values(112,"HEART_RATE",82,"24-05-2023","24-05-2023",14);
+insert into clinical_data values(113,"OXYGEN_SATURATION",67,"25-05-2023","25-05-2023",15);
+insert into clinical_data values(114,"RESPIRATORY_RATE",64,"26-05-2023","26-05-2023",16);
+insert into clinical_data values(115,"TEMPERATURE",97,"27-05-2023","27-05-2023",17);
+insert into clinical_data values(116,"BLOOD_PRESSURE",98,"28-05-2023","28-05-2023",18);
+insert into clinical_data values(117,"HEART_RATE",79,"29-05-2023","29-05-2023",19);
+insert into clinical_data values(118,"OXYGEN_SATURATION",68,"30-05-2023","30-05-2023",20);
+insert into clinical_data values(119,"RESPIRATORY_RATE",52,"31-05-2023","31-05-2023",21);
+insert into clinical_data values(120,"TEMPERATURE",14,"01-06-2023","01-06-2023",22);
+
+ update clinical_data set createdts = "2024-01-02";
+
+  update clinical_data set measure_datetime = "2024-10-06";
+
+
+
+create database clinicals;
+
+use clinicals;
+
+CREATE TABLE patient (
+    id int NOT NULL AUTO_INCREMENT,
+    last_name varchar(255) NOT NULL,
+    first_name varchar(255) NOT NULL,
+    age int,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE clinicaldata (
+    id int NOT NULL AUTO_INCREMENT,
+    patient_id int,
+    component_name varchar(255) NOT NULL,
+    component_value varchar(255) NOT NULL,
+    measured_date_time TIMESTAMP,
+    PRIMARY KEY (id),
+     CONSTRAINT fk_patient FOREIGN KEY (patient_id)
+  REFERENCES patient(id)
+);
+
+
+insert into patient values(1,'John','Mccain',52);
+insert into patient values(2,'Siva','Shankar',32);
+insert into patient values(3,'Anthony','Simon',22);
+insert into patient values(4,'Bruce','Sanhurst',33);
+insert into patient values(5,'Abhram','Mani',55);
+insert into patient values(6,'Gandhi','Singh',12);
+insert into patient values(7,'Antti','Krovinan',27);
+insert into patient values(8,'Simba','White',24);
+insert into patient values(9,'Rose','Tanic',29);
+insert into patient values(10,'Rowling','Lte',49);
+
+
+
+insert into clinicaldata  values('1', '1', 'bp', '67/119', '2018-07-09 19:34:24');
+insert into clinicaldata  values('2', '2', 'bp', '63/115', '2018-06-19 19:34:24');
+insert into clinicaldata  values('3', '3', 'bp', '72/129', '2018-07-26 19:34:24');
+insert into clinicaldata  values('4', '4', 'bp', '74/139', '2018-08-03 19:34:24');
+insert into clinicaldata  values('5', '5', 'bp', '67/119', '2018-08-29 19:34:24');
+insert into clinicaldata  values('6', '6', 'bp', '62/109', '2018-07-12 19:34:24');
+insert into clinicaldata  values('7', '7', 'bp', '55/102', '2018-06-13 19:34:24');
+insert into clinicaldata  values('8', '8', 'bp', '47/90', '2018-08-02 19:34:24');
+insert into clinicaldata  values('9', '9', 'bp', '90/149', '2018-06-01 19:34:24');
+insert into clinicaldata  values('10', '10', 'bp', '50/109', '2018-07-09 19:34:24');
+insert into clinicaldata  values('11', '1', 'bp', '55/102', '2018-11-02 19:34:24');
+insert into clinicaldata  values('12', '2', 'bp', '67/119', '2018-08-09 19:34:24');
+insert into clinicaldata  values('13', '3', 'bp', '63/115', '2018-09-09 19:34:24');
+insert into clinicaldata  values('14', '4', 'bp', '55/102', '2018-09-13 19:34:24');
+insert into clinicaldata  values('15', '5', 'bp', '50/109', '2018-10-12 19:34:24');
+insert into clinicaldata  values('16', '6', 'bp', '67/119', '2018-11-29 19:34:24');
+insert into clinicaldata  values('17', '7', 'bp', '63/115', '2018-11-03 19:34:24');
+insert into clinicaldata  values('18', '8', 'bp', '63/115', '2018-10-26 19:34:24');
+insert into clinicaldata  values('19', '9', 'bp', '55/102', '2018-09-11 19:34:24');
+insert into clinicaldata  values('20', '10', 'bp', '72/129', '2018-09-29 19:34:24');
+insert into clinicaldata  values('21', '1', 'bp', '55/102', '2018-10-09 19:34:24');
+insert into clinicaldata  values('22', '2', 'bp', '63/115', '2018-10-20 19:34:24');
+insert into clinicaldata  values('23', '3', 'bp', '55/102', '2018-11-19 19:34:24');
+insert into clinicaldata  values('24', '5', 'bp', '72/129', '2018-12-30 19:34:24');
+insert into clinicaldata  values('25', '6', 'bp', '63/115', '2018-10-21 19:34:24');
+insert into clinicaldata  values('26', '7', 'bp', '47/90', '2018-12-29 19:34:24');
+insert into clinicaldata  values('27', '8', 'bp', '63/115', '2018-11-08 19:34:24');
+insert into clinicaldata  values('28', '9', 'bp', '90/149', '2018-10-03 19:34:24');
+insert into clinicaldata  values('29', '10', 'bp', '55/102', '2018-10-29 19:34:24');
+insert into clinicaldata  values('30', '1', 'bp', '90/149', '2018-03-19 19:34:24');
+insert into clinicaldata  values('31', '2', 'bp', '55/102', '2018-04-03 19:34:24');
+insert into clinicaldata  values('32', '3', 'bp', '63/115', '2018-05-21 19:34:24');
+insert into clinicaldata  values('33', '4', 'bp', '47/90', '2018-03-31 19:34:24');
+insert into clinicaldata  values('34', '5', 'bp', '55/102', '2018-04-19 19:34:24');
+insert into clinicaldata  values('35', '6', 'bp', '72/129', '2018-04-28 19:34:24');
+insert into clinicaldata  values('36', '7', 'bp', '67/119', '2018-03-19 19:34:24');
+insert into clinicaldata  values('37', '8', 'bp', '50/109', '2018-05-21 19:34:24');
+insert into clinicaldata  values('38', '9', 'bp', '67/119', '2018-04-12 19:34:24');
+insert into clinicaldata  values('39', '10', 'bp', '67/119', '2018-03-19 19:34:24');
+insert into clinicaldata  values('40', '1', 'bp', '67/119', '2019-06-09 19:34:24');
+insert into clinicaldata  values('41', '2', 'bp', '55/102', '2019-05-23 19:34:24');
+insert into clinicaldata  values('42', '3', 'bp', '67/119', '2019-06-01 19:34:24');
+insert into clinicaldata  values('43', '4', 'bp', '90/149', '2019-03-01 19:34:24');
+insert into clinicaldata  values('44', '5', 'bp', '55/102', '2019-01-06 19:34:24');
+insert into clinicaldata  values('45', '6', 'bp', '67/119', '2019-03-29 19:34:24');
+insert into clinicaldata  values('46', '7', 'bp', '55/102', '2019-02-21 19:34:24');
+insert into clinicaldata  values('47', '8', 'bp', '50/109', '2019-02-15 19:34:24');
+insert into clinicaldata  values('48', '9', 'bp', '67/119', '2019-04-19 19:34:24');
+insert into clinicaldata  values('49', '10', 'bp', '37/89', '2019-05-29 19:34:24');
+
+insert into clinicaldata  values('51', '1', 'heartrate', '67', '2018-07-09 19:34:24');
+insert into clinicaldata  values('52', '2', 'heartrate', '115', '2018-06-19 19:34:24');
+insert into clinicaldata  values('53', '3', 'heartrate', '72', '2018-07-26 19:34:24');
+insert into clinicaldata  values('54', '4', 'heartrate', '74', '2018-08-03 19:34:24');
+insert into clinicaldata  values('55', '5', 'heartrate', '119', '2018-08-29 19:34:24');
+insert into clinicaldata  values('56', '6', 'heartrate', '62', '2018-07-12 19:34:24');
+insert into clinicaldata  values('57', '7', 'heartrate', '102', '2018-06-13 19:34:24');
+insert into clinicaldata  values('58', '8', 'heartrate', '90', '2018-08-02 19:34:24');
+insert into clinicaldata  values('59', '9', 'heartrate', '90', '2018-06-01 19:34:24');
+insert into clinicaldata  values('50', '10', 'heartrate', '109', '2018-07-09 19:34:24');
+insert into clinicaldata  values('61', '1', 'heartrate', '55', '2018-11-02 19:34:24');
+insert into clinicaldata  values('62', '2', 'heartrate', '67', '2018-08-09 19:34:24');
+insert into clinicaldata  values('63', '3', 'heartrate', '63', '2018-09-09 19:34:24');
+insert into clinicaldata  values('64', '4', 'heartrate', '55', '2018-09-13 19:34:24');
+insert into clinicaldata  values('65', '5', 'heartrate', '50', '2018-10-12 19:34:24');
+insert into clinicaldata  values('66', '6', 'heartrate', '119', '2018-11-29 19:34:24');
+insert into clinicaldata  values('67', '7', 'heartrate', '115', '2018-11-03 19:34:24');
+insert into clinicaldata  values('68', '8', 'heartrate', '63', '2018-10-26 19:34:24');
+insert into clinicaldata  values('69', '9', 'heartrate', '55', '2018-09-11 19:34:24');
+insert into clinicaldata  values('60', '10', 'heartrate', '72', '2018-09-29 19:34:24');
+insert into clinicaldata  values('71', '1', 'heartrate', '55', '2018-10-09 19:34:24');
+insert into clinicaldata  values('72', '2', 'heartrate', '115', '2018-10-20 19:34:24');
+insert into clinicaldata  values('73', '3', 'heartrate', '55', '2018-11-19 19:34:24');
+insert into clinicaldata  values('74', '5', 'heartrate', '129', '2018-12-30 19:34:24');
+insert into clinicaldata  values('75', '6', 'heartrate', '63', '2018-10-21 19:34:24');
+insert into clinicaldata  values('76', '7', 'heartrate', '90', '2018-12-29 19:34:24');
+insert into clinicaldata  values('77', '8', 'heartrate', '63', '2018-11-08 19:34:24');
+insert into clinicaldata  values('78', '9', 'heartrate', '149', '2018-10-03 19:34:24');
+insert into clinicaldata  values('79', '10', 'heartrate', '55', '2018-10-29 19:34:24');
+insert into clinicaldata  values('70', '1', 'heartrate', '149', '2018-03-19 19:34:24');
+insert into clinicaldata  values('81', '2', 'heartrate', '55', '2018-04-03 19:34:24');
+insert into clinicaldata  values('82', '3', 'heartrate', '115', '2018-05-21 19:34:24');
+insert into clinicaldata  values('83', '4', 'heartrate', '47', '2018-03-31 19:34:24');
+insert into clinicaldata  values('84', '5', 'heartrate', '102', '2018-04-19 19:34:24');
+insert into clinicaldata  values('85', '6', 'heartrate', '72', '2018-04-28 19:34:24');
+insert into clinicaldata  values('86', '7', 'heartrate', '67', '2018-03-19 19:34:24');
+insert into clinicaldata  values('87', '8', 'heartrate', '109', '2018-05-21 19:34:24');
+insert into clinicaldata  values('88', '9', 'heartrate', '67', '2018-04-12 19:34:24');
+insert into clinicaldata  values('89', '10', 'heartrate', '119', '2018-03-19 19:34:24');
+insert into clinicaldata  values('80', '1', 'heartrate', '119', '2019-06-09 19:34:24');
+insert into clinicaldata  values('91', '2', 'heartrate', '55/102', '2019-05-23 19:34:24');
+insert into clinicaldata  values('92', '3', 'heartrate', '67', '2019-06-01 19:34:24');
+insert into clinicaldata  values('93', '4', 'heartrate', '149', '2019-03-01 19:34:24');
+insert into clinicaldata  values('94', '5', 'heartrate', '102', '2019-01-06 19:34:24');
+insert into clinicaldata  values('95', '6', 'heartrate', '67/119', '2019-03-29 19:34:24');
+insert into clinicaldata  values('96', '7', 'heartrate', '55', '2019-02-21 19:34:24');
+insert into clinicaldata  values('97', '8', 'heartrate', '50', '2019-02-15 19:34:24');
+insert into clinicaldata  values('98', '9', 'heartrate', '67', '2019-04-19 19:34:24');
+insert into clinicaldata  values('99', '10', 'heartrate', '89', '2019-05-29 19:34:24');
+
+
+drop table patient;
+drop table clinicaldata;
+drop database clinicals;
