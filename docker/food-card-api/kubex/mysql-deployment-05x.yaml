@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: food-card-api-mysql-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: food-card-api-mysql
+  template:
+    metadata:
+      labels:
+        app: food-card-api-mysql
+    spec:
+      containers:
+          - name: food-card-api-mysql-container
+            image: mysql:5.6
+            env:
+              - name: MYSQL_ROOT_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    name: mysql-root-password
+                    key: password
+              - name: MYSQL_DATABASE
+                valueFrom:
+                  configMapKeyRef:
+                    name: mysql-config-map
+                    key: mysql-database-name
+              - name: MYSQL_USER
+                valueFrom:
+                  configMapKeyRef:
+                    name: mysql-config-map
+                    key: mysql-user-username
+              - name: MYSQL_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    name: mysql-password
+                    key: password
+            ports:
+              - containerPort: 3306
+            volumeMounts:
+              - name: mysql-persistent-storage
+                mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: food-card-api-mysql-pvc

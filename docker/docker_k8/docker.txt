@@ -1,0 +1,56 @@
+Spring boot:-
+
+0) create network & volume
+    docker network create devlan
+    docker volume create devdb
+1) Build the Project & Create Jar File.
+2) Build the docker file
+    docker build -t food-card-api .
+    
+
+4) Create MySQl Container
+    docker container run --name mysqldevdb -p 3305:3306 -v devdb:/var/lib/mysql  --network devlan -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=mydb -d mysql:5.6
+
+5) Create Api Container
+    docker run --name food-cards-api-dev -p 8080:8080 --network devlan -d food-card-api
+    # docker run --name food-cards-api-dev -v /home/xyz/Documents/work/opensamples/docker/food-card-api/logx:/logs -p 8080:8080 --network devlan -d food-card-api
+
+6) Portal Start
+    docker build -t food_cards_ang_app .
+    docker run -d --network devlan -p 8090:80 food_cards_ang_app
+
+
+
+Publish Images
+ docker login
+ docker Images
+
+ docker tag 5dd3d71b82c8 pokran75/food_cards_ang_app
+ docker push pokran75/food_cards_ang_app
+
+ docker tag 5dd3d71b82c8 pokran75:food_cards_ang_app
+ docker push pokran75:food_cards_ang_app
+
+ docker tag 9ba8cd69b890 pokran75/food-card-api
+ docker push  pokran75/food-card-api
+
+ k8
+ ==
+
+In Api Project Run this command:-
+
+ minikube delete
+ minikube start --driver=docker
+
+ helm create k8
+ helm template k8
+ eval $(minikube docker-env)
+ docker build -t food-card-api:latest .
+ minikube  image ls
+
+ helm install abichart k8
+ helm delete abichart
+ kubectl get all
+ kubectl get services
+
+ minikube service abichart-mysql-service --url

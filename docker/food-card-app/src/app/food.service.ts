@@ -14,15 +14,16 @@ export class FoodService {
    constructor(private httpC: HttpClient) { 
   
   }
-
+  // ../api/all
   fetchAll() {
     return this.httpC.get(
-      AppConstants.URL + AppConstants.COLON + AppConstants.PORT + AppConstants.SLASH + AppConstants.FETCHALL
+      AppConstants.SLASH + AppConstants.FETCHALL
+      //AppConstants.URL + AppConstants.COLON + AppConstants.PORT + AppConstants.SLASH + AppConstants.FETCHALL
     );
   }
 
   save(card: Card) {
-    return this.httpC.post(AppConstants.URL + AppConstants.COLON + AppConstants.PORT + AppConstants.SLASH + AppConstants.SAVE, card).subscribe(x => console.log(x));
+    return this.httpC.post(AppConstants.SLASH + AppConstants.SAVE, card).subscribe(x => console.log(x));
   }
 }
 

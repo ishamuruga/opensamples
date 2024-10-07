@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-food-card-api-service
+spec:
+  selector:
+    app: {{ .Release.Name }}-food-card-api
+  ports:
+      - protocol: TCP
+        port: 8080
+        targetPort: 8080
+  type: LoadBalancer

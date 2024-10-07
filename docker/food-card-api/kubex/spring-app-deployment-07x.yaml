@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: food-card-api-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: food-card-api
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: food-card-api
+        tier: backend
+    spec:
+      containers:
+          - name: food-card-api-container
+            image: pokran75/food-card-api:latest
+            imagePullPolicy: IfNotPresent
+            ports:
+              - containerPort: 8080
+            env:
+              - name: SPRING_DATASOURCE_URL
+                value: jdbc:mysql://mysql-service:3306/mydb?createDatabaseIfNotExist=true&characterEncoding=UTF-8
+              - name: SPRING_DATASOURCE_USERNAME
+                valueFrom:
+                  secretKeyRef:
+                    name: mysql-root-user
+                    key: username
+              - name: SPRING_DATASOURCE_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    name: mysql-root-password
+                    key: password
