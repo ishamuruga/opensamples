@@ -2,6 +2,11 @@ Reference:-
 ------------
 https://benstitou-anas.medium.com/deploy-java-spring-application-with-mysql-db-on-kubernetes-1e456271c6a1
 
+docker rm -v -f $(docker ps -qa)
+docker rmi $(docker images -a -q)
+echo "All containers and images have been removed." 
+
+
 
 docker build -t pokran75/food-card-api .
 docker push pokran75/food-card-api
@@ -22,10 +27,14 @@ kubectl apply -f spring-app-service-08x.yaml
 minikube service food-card-api-service --url
 
 
+docker build -t pokran75/food-card-app:v8 .
+docker push pokran75/food-card-app:v8
+
+kubectl apply -f angular-app-deployment-09x.yaml
+kubectl apply -f angular-app-service-10x.yaml
 
 
-
-
+minikube service frontend --url
 
 
 debug
