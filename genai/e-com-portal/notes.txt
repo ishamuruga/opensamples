@@ -1,7 +1,0 @@
-Task Java Class with a description , done flag. Task Manager class that adds tasks, lists tasks and marks task as done given the description
-
-i am java developer. i want to create an application that captures patient and his clinical data. Suggest a good tech stack to build REST apis.
-
-how can i create a clinicals api spring boot project while using mysql database to save patient and his clinical data.
-
-How can Spring Security be configured to support OAuth2 for more advanced authentication and authorization?
