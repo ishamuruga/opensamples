@@ -1,0 +1,26 @@
+🔹 What is ReAct?
+ReAct = Reason + Act
+
+It’s a framework where a language model:
+
+Reasons about the current situation or problem (e.g., what to do next),
+
+Then Acts by interacting with the environment or external tools (e.g., calling a function or making a web query).
+
+This cycle continues until the goal is reached.
+
+🔸 Structure of ReAct
+A ReAct agent typically outputs alternating steps of:
+
+Thought: internal reasoning
+
+Action: what tool or command to use
+
+Observation: what happened as a result
+🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸🔸
+Question: What's the weather in Paris?
+
+Thought: I should check a weather website.
+Action: search("weather in Paris")
+Observation: It's 18°C and sunny in Paris.
+Answer: It's 18°C and sunny in Paris.
