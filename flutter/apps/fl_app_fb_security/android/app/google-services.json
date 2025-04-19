@@ -1,0 +1,29 @@
+{
+    "project_info": {
+      "project_number": "895935530942",
+      "project_id": "m-app-sec-prov",
+      "storage_bucket": "m-app-sec-prov.firebasestorage.app"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:895935530942:android:8a4a36d2ed005be708dbef",
+          "android_client_info": {
+            "package_name": "com.example.fl_app_fb_security"
+          }
+        },
+        "oauth_client": [],
+        "api_key": [
+          {
+            "current_key": "AIzaSyBmgRR0eWT-UcqmySEYHR5l0ZpKjFaboGk"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": []
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
