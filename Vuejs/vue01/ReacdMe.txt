@@ -1,0 +1,29 @@
+3 Components
+============
+Script
+Template
+Style
+
+<script>
+    //TS Code
+</script>
+<template>
+    <div></div>
+</template>
+<style scoped>
+    //CSS STylin
+</style>
+
+Composition API vs Options
+Reusable Self COntained Code / Component
+
+SFC - Sigle File Components
+
+==========================
+Create Vue from Vite - recommended
+Vue Cli- not recommended
+CDN
+
+NuxtJS and Gridsome - SSR and SSG (Static Site Generstors) Frameworks
+
+Pinia State Mgmt Library

@@ -21,13 +21,13 @@ fun CoroutineScope.produceNumbers() = produce<Int> {
 
 fun CoroutineScope.launchProcessor(id: Int, channel: ReceiveChannel<Int>) = launch {
     for (msg in channel) {
-        println("#Processor #$id received $msg")
+        println("#Processor #1 #$id received $msg")
     }
 }
 
 fun CoroutineScope.launchProcessor2(id: Int, channel: ReceiveChannel<Int>) = launch {
     for (msg in channel) {
-        println("@Processor #$id received $msg")
+        println("@Processor #2 #$id received $msg")
     }
 }
 

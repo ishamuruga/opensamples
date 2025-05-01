@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.1.10"
+
 }
 
 group = "org.superduper.retailbank"
@@ -10,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0") // Coroutines
     testImplementation(kotlin("test"))
 }
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue 3 CDN Example</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <button @click="changeMessage">Change Message</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+      const { createApp, ref } = Vue;
+
+      const app = createApp({
+        setup() {
+          const message = ref("Hello Vue!");
+
+          const changeMessage = () => {
+            message.value = "Message Changed!";
+          };
+
+          return {
+            message,
+            changeMessage,
+          };
+        },
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
+</html>
