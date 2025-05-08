@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppNavbar from '@/components/AppNavbar.vue';
 import MainScreenHeader from '@/components/MainScreenHeader.vue';
-
+import JobCard from '@/components/JobCard.vue';
 </script>
 
 
@@ -10,6 +10,10 @@ import MainScreenHeader from '@/components/MainScreenHeader.vue';
   <div class="jumbotron custom_bg">
     <div class="container-fluid vertical-center">
       <MainScreenHeader title="Become a Front End Developer" subtitle="Tech Stack for NextGen Apps"></MainScreenHeader>
+      <JobCard></JobCard>
+    </div>
+    <div>
+
     </div>
   </div>
 

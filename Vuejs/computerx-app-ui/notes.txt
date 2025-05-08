@@ -1,0 +1,39 @@
+npm init @vitejs/app
+
+
+npm install vue-router@4 --save
+
+
+npm install -g @vue/cli
+
+npm install vee-validate yup
+
+https://vueschool.io/lessons/adding-routes-and-content
+
+
+https://vuejs.org/guide/essentials/lifecycle
+
+Creation - beforecreate, created
+Mounting - beforemound, mounterd
+Updating - before update, updated
+UnMounting - before unmount,unmounted
+Misc - Activated, Deasctivated, errorCaptured, renderTracked. renderTriggered
+
+Check Kept Alive Component
+
+
+Hook	Description
+onBeforeMount()	                    Called before the component is mounted.
+onMounted()	                        Called after the component is mounted to the DOM.
+onBeforeUpdate()	                Called before the DOM updates due to reactive data changes.
+onUpdated()         	            Called after the DOM updates.
+onBeforeUnmount()	                Called right before a component is unmounted.
+onUnmounted()	                    Called after the component is unmounted.
+onActivated()	(for <keep-alive>)  Called when a kept-alive component is activated.
+onDeactivated()	(for <keep-alive>)  Called when a kept-alive component is deactivated.
+onErrorCaptured()	                Called when an error from a child component is caught.
+
+
+onBeforeMount()
+===============
+
