@@ -16,7 +16,7 @@ sudo docker volume create mysqldata
 sudo docker volume ls
 sudo docker volume inspect mysql56-data
 
-docker network create dev-network
+docker network create dev-network   
 docker network ls
 docker network inspect dev-network
 
