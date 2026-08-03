@@ -1,4 +1,42 @@
-Reference:-
+docker
+=======
+sudo docker run --rm -ti -p 9000:9000 -p 5000:5000 -p 8080:8080 --name devsonarqube ff9da62e8210
+sudo docker run --rm -d -p 9000:9000 -p 5000:5000 -p 8080:8080 --name devsonarqube ff9da62e8210
+
+sudo docker logs cb218927fde3 -f
+
+udo docker inspect cb218927fde3
+
+sudo docker exec -it cb218927fde3   /bin/bash
+
+=================================
+
+
+sudo docker volume create mysqldata
+sudo docker volume ls
+sudo docker volume inspect mysql56-data
+
+docker network create dev-network
+docker network ls
+docker network inspect dev-network
+
+
+mkdir -p ~/docker/mysql56
+
+docker run -d --name mysql56 -p 3306:3306 --network dev-network -e MYSQL_ROOT_PASSWORD=root123  -e MYSQL_DATABASE=myapp -e MYSQL_USER=myuser -e MYSQL_PASSWORD=mypassword -v mysqldata:/var/lib/mysql mysql:5.6
+docker run -d --name mysql56 -p 3306:3306 --network dev-network -e MYSQL_ROOT_PASSWORD=root123  -e MYSQL_DATABASE=myapp -e MYSQL_USER=myuser -e MYSQL_PASSWORD=mypassword -v ~/docker/mysql56:/var/lib/mysql mysql:5.6
+
+docker build -t my-spring-app .
+
+docker run -d --name food-card-api --network dev-network -p 8080:8080 my-spring-app
+
+=============================
+minikube start --force
+
+
+
+
+Kubernetes Reference:-
 ------------
 https://benstitou-anas.medium.com/deploy-java-spring-application-with-mysql-db-on-kubernetes-1e456271c6a1
 
