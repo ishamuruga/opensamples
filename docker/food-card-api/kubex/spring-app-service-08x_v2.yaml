@@ -1,0 +1,9 @@
+spec:
+  type: NodePort
+  selector:
+    app: food-card-api
+    tier: backend
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30080

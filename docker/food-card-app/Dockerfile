@@ -11,7 +11,8 @@
 # EXPOSE 80
 
 # Stage 1: Use the official Node.js Alpine image as the base image
-FROM node:21-alpine3.18 AS build
+# FROM node:21-alpine3.18 AS build
+FROM node:22.22.3-alpine AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -35,7 +36,7 @@ RUN npm install
 COPY . .
 
 # Build the Angular app with production configuration
-RUN ng build --configuration=production --base-href /app/
+RUN npx ng build --configuration=production --base-href /app/
 
 # Stage 2: Create a new image with a smaller base image (NGINX)
 FROM nginx:1.25.3-alpine-slim

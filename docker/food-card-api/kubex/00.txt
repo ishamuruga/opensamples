@@ -7,6 +7,57 @@ docker rmi $(docker images -a -q)
 echo "All containers and images have been removed." 
 
 
+Corrected steps:-
+
+docker build -t pokran75/food-card-api .
+docker push pokran75/food-card-api
+docker build -t pokran75/food-card-app:v8 .
+docker push pokran75/food-card-app:v8
+
+minikube delete
+minikube start
+
+kubectl apply -f mysql-configmap-01x.yaml
+ -kubectl get configmap
+ -kubectl describe configmap mysql-config-map
+
+kubectl apply -f secrets-02x.yaml
+ -kubectl get secrets
+ -kubectl describe secret mysql-username
+
+kubectl apply -f mysql-pv-03x.yaml
+ -kubectl get pv
+
+kubectl apply -f mysql-pvc-04x.yaml
+ -kubectl get pvc
+
+kubectl apply -f mysql-deployment-05x.yaml
+ -kubectl get deployment
+ -kubectl describe deployment food-card-api-mysql-deployment
+ -kubectl get pods
+ -kubectl exec -it food-card-api-mysql-deployment-747b684db-q5cxb -- bash
+
+kubectl apply -f mysql-service-06x.yaml
+ -kubectl describe service mysql-service
+ -kubectl get pods
+
+kubectl apply -f spring-app-deployment-07x.yaml
+ -kubectl describe deployment mysql-service
+ -kubectl get pods
+
+kubectl apply -f spring-app-service-08x.yaml
+ -kubectl delete pod food-card-api-deployment-5b96fd644f-bgnff
+
+kubectl apply -f spring-app-deployment-07x.yaml
+kubectl apply -f angular-app-deployment-09x.yaml
+kubectl apply -f angular-app-service-10x.yaml
+
+minikube service frontend --url
+
+http://192.168.49.2:31884/app/index.html
+
+===============
+
 
 docker build -t pokran75/food-card-api .
 docker push pokran75/food-card-api
@@ -23,6 +74,8 @@ kubectl apply -f mysql-service-06x.yaml
 kubectl apply -f spring-app-deployment-07x.yaml
 kubectl apply -f spring-app-service-08x.yaml
 
+kubectl port-forward svc/food-card-api 8080:8080
+
 
 minikube service food-card-api-service --url
 
@@ -35,6 +88,9 @@ kubectl apply -f angular-app-service-10x.yaml
 
 
 minikube service frontend --url
+kubectl get svc frontend
+
+kubectl get pods
 
 
 debug
@@ -49,3 +105,40 @@ kubectl describe services my-service
 
 https://kubernetes.io/docs/tasks/access-application-cluster/connecting-frontend-backend/
 https://www.geeksforgeeks.org/how-to-deploy-angular-app-in-kubernetes/
+
+
+
+                    User / Browser
+                           │
+                           │
+                    http://<NodeIP>:NodePort
+                           │
+                           ▼
+                   +----------------+
+                   |    Service     |
+                   | (NodePort or   |
+                   |  ClusterIP)    |
+                   +----------------+
+                           │
+                  Uses label selector
+                  app=hello
+                  tier=frontend
+                           │
+          ┌────────────────┼────────────────┐
+          ▼                ▼                ▼
+     +----------+     +----------+     +----------+
+     |   Pod 1  |     |   Pod 2  |     |   Pod 3  |
+     |Frontend  |     |Frontend  |     |Frontend  |
+     +----------+     +----------+     +----------+
+            ▲                ▲                ▲
+            │                │                │
+            └────────────────┼────────────────┘
+                             │
+                    Created and Managed by
+                             │
+                             ▼
+                  +----------------------+
+                  |      Deployment      |
+                  |  replicas: 3         |
+                  | image: frontend:v1   |
+                  +----------------------+
