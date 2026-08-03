@@ -38,7 +38,7 @@ kubectl apply -f mysql-deployment-05x.yaml
  -kubectl exec -it food-card-api-mysql-deployment-747b684db-q5cxb -- bash
 
 kubectl apply -f mysql-service-06x.yaml
- -kubectl describe service mysql-service
+ -kubectl describe service mysql-service   
  -kubectl get pods
 
 kubectl apply -f spring-app-deployment-07x.yaml
